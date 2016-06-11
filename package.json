@@ -1,0 +1,24 @@
+{
+  "name": "doc-malawi",
+  "version": "1.0.0",
+  "description": "A webdoc about tabacco in Malawi.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavpursche/doc-malawi.git"
+  },
+  "author": "Gustav Pursche <pursche@posteo.de>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/gustavpursche/doc-malawi/issues"
+  },
+  "homepage": "https://github.com/gustavpursche/doc-malawi#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-gzip": "^1.4.0",
+    "gulp-s3": "^0.3.0"
+  }
+}
