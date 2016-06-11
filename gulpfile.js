@@ -40,3 +40,7 @@ gulp.task('upload', ['styles'], () => {
     .pipe(awspublish.reporter())
     .pipe(cloudfront(cloudfrontConfig));
 });
+
+gulp.task('watch', () => {
+  gulp.watch('./assets/styles/**/*.scss', ['styles']);
+});
