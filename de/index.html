@@ -1,7 +1,15 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <title>Voll abhängig</title>
+    <title>Voll abhangig</title>
+
+    <meta name="viewport"
+          content="width=device-width">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik:900|Open+Sans:400"
+          rel="stylesheet"
+          type="text/css">
+
     <link rel="stylesheet"
           href="../dist/styles/main.css">
     <meta charset="utf-8">
@@ -10,33 +18,56 @@
   <body>
     <main class="app">
       <header class="header">
-        <button class="">Fullscreen</button>
-        <button class="">Toggle Navigation</button>
+        <button class="header__button js-toggle-fullscreen">
+          <svg class="header__button-icon"
+               width="1792"
+               height="1792"
+               viewBox="0 0 1792 1792"
+               xmlns="http://www.w3.org/2000/svg">
+            <path d="M1411 541l-355 355 355 355 144-144q29-31 70-14 39 17 39 59v448q0 26-19 45t-45 19h-448q-42 0-59-40-17-39 14-69l144-144-355-355-355 355 144 144q31 30 14 69-17 40-59 40h-448q-26 0-45-19t-19-45v-448q0-42 40-59 39-17 69 14l144 144 355-355-355-355-144 144q-19 19-45 19-12 0-24-5-40-17-40-59v-448q0-26 19-45t45-19h448q42 0 59 40 17 39-14 69l-144 144 355 355 355-355-144-144q-31-30-14-69 17-40 59-40h448q26 0 45 19t19 45v448q0 42-39 59-13 5-25 5-26 0-45-19z" fill="#fff"/>
+          </svg>
+          Als Vollbild
+        </button>
       </header>
 
-      <section class="step">
+      <section class="step step--active"
+               style="background-image: url(../dist/images/malawi_1.jpg);">
         <div class="step__canvas">
-          <h1 class="step__headline">Voll abhängig</h1>
+          <h1 class="step__headline">Voll abhängig</h1>
           <p class="step__teaser">
             Der Tabak beschert Malawi wichtige Einnahmen, aber durch ihn fehlen
-            Flächen für den Anbau von Nahrungsmitteln. Daher will die Regierung
+            Flächen für den Anbau von Nahrungsmitteln. Daher will die Regierung
             weg vom Tabak. Doch die Tabakindustrie steht im Weg – und
-            ausgerechnet die sogenannte Entwicklungshilfe. Multimedia-Reportage
-            aus einem Land, das an der Zigarette hängt.
+            ausgerechnet die sogenannte Entwicklungshilfe.
           </p>
 
-          <a href="#step2"
-             class="button">Anschauen</a>
+          <a href="/video1"
+             class="button button--intro js-step-goto"
+             data-target="1">
+            <svg class="button__icon"
+                 width="1792"
+                 height="1792"
+                 viewBox="0 0 1792 1792"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M1576 927l-1328 738q-23 13-39.5 3t-16.5-36v-1472q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z" fill="#fff"/>
+            </svg>
+            Anschauen
+          </a>
         </div>
       </section>
 
       <section class="step">
-        <div class="step__canvas">
-          VIDEO:[Inhalt: Tabakbauer Erisa Chisenga erzählt, wie schwierig der
-          Tabakanbau ist. Er deutet an, dass die Tabakbauern ausgebeutet werden.]
-          <a href="#step2"
-             class="button">Weiter</a>
-        </div>
+        <!--
+        VIDEO:[Inhalt: Tabakbauer Erisa Chisenga erzahlt, wie schwierig der
+        Tabakanbau ist. Er deutet an, dass die Tabakbauern ausgebeutet werden.]
+        -->
+
+        <video class="js-video js-video-play video video--fullscreen"
+               preload="auto"
+               muted>
+          <source src="../dist/videos/big_buck_bunny.mp4"
+                  type="video/mp4">
+        </video>
       </section>
 
       <section class="step">
@@ -44,14 +75,14 @@
           <p class="step__teaser">
             Jeden Tag streift Erisa Chisenga durch sein Feld von 100 mal 100
             Metern. Sein Hektar Hoffnung. Der Tabak sollte eine bessere Zukunft
-            für seine Frau und die fünf Kinder bringen. Deshalb ist Erisa
-            Chisenga vor fünf Jahren in den Tabakanbau eingestiegen. Seitdem ist
-            er einer von fast 400.000 Tabakbauern in Malawi. Das kleine
-            südostafrikanische Land gehört zu den weltweit wichtigsten
-            Anbauländern für Tabak.
+            für seine Frau und die fünf Kinder bringen. Deshalb ist Erisa
+            Chisenga vor fünf Jahren in den Tabakanbau eingestiegen. Seitdem ist
+            er einer von fast 400.000 Tabakbauern in Malawi.
           </p>
-          <a href="#step2"
-             class="button">Weiter</a>
+
+          <a href="#step3"
+             class="button js-step-goto"
+             data-target="3">Weiter</a>
         </div>
       </section>
 
@@ -67,24 +98,24 @@
       <section class="step">
         <div class="step__canvas">
           <p class="step__teaser">
-            Ohne Devisen, keine Importe. Anders ausgedrückt: Malawi ist
-            abhängig vom Tabak.
+            Ohne Devisen, keine Importe. Anders ausgedrückt: Malawi ist
+            abhangig vom Tabak.
           </p>
 
           <p class="step__teaser">
-            Diese Abhängigkeit rächte sich 2011, als die Tabakpreise einbrachen.
+            Diese Abhangigkeit rachte sich 2011, als die Tabakpreise einbrachen.
             Die Regierung konnte sich keine Ölimporte mehr leisten. Tagelang fuhr
-            kaum ein Auto, die Preise für andere Güter des täglichen Bedarfs
+            kaum ein Auto, die Preise für andere Güter des taglichen Bedarfs
             explodierten. Demonstranten lieferten sich blutige Straßenschlachten
             mit der Polizei, mindestens 19 Menschen starben. Der Tabak, von
-            vielen Ökonomen als „cash crop“ gefeiert, als gewinnträchtiger
+            vielen Ökonomen als „cash crop“ gefeiert, als gewinntrachtiger
             Exportschlager, erwies sich als eine Ware, die mindestens eine
             Teilschuld an der Staatskrise trug.
           </p>
 
           <p class="step__teaser">
             Rauchen wird zunehmend uncool. Immer mehr Menschen verzichten aus
-            Rücksicht auf ihre Gesundheit da-rauf, hohe Steuern erschweren den
+            Rücksicht auf ihre Gesundheit da-rauf, hohe Steuern erschweren den
             Zigarettenfirmen das Leben. Was, wenn die Nachfrage weiter sinkt?
           </p>
 
@@ -99,7 +130,7 @@
 
           <p class="step__teaser">
             Auf der Suche nach Antworten reisen wir durch ein kleines Land, das
-            mitten in einem großen Dilemma steckt: Wie raus aus der Abhängigkeit
+            mitten in einem großen Dilemma steckt: Wie raus aus der Abhangigkeit
             vom Tabak, der bislang die wichtigste Einnahmequelle ist?
           </p>
 
@@ -111,15 +142,15 @@
       <section class="step">
         <div class="step__canvas">
           <p class="step__teaser">
-            Traditionell eröffnet der Präsident von Malawi die jährliche
-            Tabakauktion. Das ist in etwa so, wie wenn der Oberbürgermeister
+            Traditionell eröffnet der Prasident von Malawi die jahrliche
+            Tabakauktion. Das ist in etwa so, wie wenn der Oberbürgermeister
             auf dem Oktoberfest das erste Bierfass ansticht. Wenn die
             Auktionshallen ihre Tore öffnen, stauen sich die Laster mit dem
             Tabak kilometerlang durch die Hauptstadt Lilongwe. Tabak sei in
             Malawi eine „political crop“, sagt Finanzminister Goodall Gondwe,
-            eine Pflanze als Politikum. Der Trubel zur Erntezeit dürfe jedoch
-            nicht darüber hinwegtäuschen, dass Malawi raus aus der Abhängigkeit
-            vom Tabak müsse. Der Minister erklärt die Exitstrategie der
+            eine Pflanze als Politikum. Der Trubel zur Erntezeit dürfe jedoch
+            nicht darüber hinwegtauschen, dass Malawi raus aus der Abhangigkeit
+            vom Tabak müsse. Der Minister erklart die Exitstrategie der
             malawischen Regierung:
           </p>
 
@@ -130,7 +161,7 @@
 
       <section class="step">
         <div class="step__canvas">
-          VIDEO [Finanzminister Goodall Gondwe berichtet über das
+          VIDEO [Finanzminister Goodall Gondwe berichtet über das
           Diversifizierungsvorhaben der malawischen Regierung.]
 
           <a href="#step2"
@@ -141,15 +172,15 @@
       <section class="step">
         <div class="step__canvas">
           <p class="step__teaser">
-            Malawi müsse seine Wirtschaft diversifizieren, also auch andere
+            Malawi müsse seine Wirtschaft diversifizieren, also auch andere
             Produkte verkaufen. Soja zum Beispiel, das ist auf dem Weltmarkt
-            gefragt. Gondwe träumt vom Absatzmarkt Indien. Das hungergeplagte
-            Malawi als Kornkammer für die Boomwirtschaft Indien?
+            gefragt. Gondwe traumt vom Absatzmarkt Indien. Das hungergeplagte
+            Malawi als Kornkammer für die Boomwirtschaft Indien?
           </p>
 
           <p class="step__teaser">
-            Nicht nur aus wirtschaftlicher Sicht ist Malawis Abhängigkeit vom
-            Tabak problematisch. Die Arbeit mit dem Tabak gefährdet auch die
+            Nicht nur aus wirtschaftlicher Sicht ist Malawis Abhangigkeit vom
+            Tabak problematisch. Die Arbeit mit dem Tabak gefahrdet auch die
             Gesundheit der Bauern.
           </p>
 
@@ -177,29 +208,29 @@
       <section class="step">
         <div class="step__canvas">
           <p class="step__teaser">
-            Kinderarbeit? Manch ein Großverdiener im Tabakgeschäft wehrt sich
+            Kinderarbeit? Manch ein Großverdiener im Tabakgeschaft wehrt sich
             gegen diesen Vorwurf. Wir haben einen von ihnen besucht.
           </p>
 
           <p class="step__teaser">
-            Jeder kennt Alfred Kapichira Banda. Der Präsident der Farmers'
+            Jeder kennt Alfred Kapichira Banda. Der Prasident der Farmers'
             Union ist einer der größten Landbesitzer nördlich der Hauptstadt
             Lilongwe. Eine imposante Erscheinung: Cowboy-Hut, das
-            Hemd prächtig ausgefüllt von seinem Kugelbauch, dazu Jeans – und
-            Gummilatschen statt Lederstiefel. Der Präsident zeigt uns den
+            Hemd prachtig ausgefüllt von seinem Kugelbauch, dazu Jeans – und
+            Gummilatschen statt Lederstiefel. Der Prasident zeigt uns den
             schnellsten Weg zu seinem Landgut. Von der Hauptstraße auf eine
             staubige Piste. Stolz weist er auf den guten Zustand der Straße
             hin – seiner Straße, zumindest entsteht dieser Eindruck und genau
-            das scheint Banda zu beabsichtigen. Während anderswo die
+            das scheint Banda zu beabsichtigen. Wahrend anderswo die
             katastrophalen Transportwege den Verkauf der Ernte erschweren, sind
             die Schlaglöcher auf dem Weg zu seiner Farm ausgebessert. Freie
-            Fahrt für reiche Bürger! Mit einem Kleinwagen braust der Präsident
-            voran. Kinder auf Fahrrädern müssen in den Graben ausweichen. Bauern
-            stehen am Wegrand Spalier und nicken dem Präsidenten zum Gruß. Der
-            grüßt im Vorbeirauschen lässig aus dem runtergelassenen Fenster
-            zurück.<br/>
+            Fahrt für reiche Bürger! Mit einem Kleinwagen braust der Prasident
+            voran. Kinder auf Fahrradern müssen in den Graben ausweichen. Bauern
+            stehen am Wegrand Spalier und nicken dem Prasidenten zum Gruß. Der
+            grüßt im Vorbeirauschen lassig aus dem runtergelassenen Fenster
+            zurück.<br/>
             Eine Frau schiebt das schwere Eisentor auf. Einrollen in das Anwesen
-            des Präsidenten, das wie eine Burg wirkt. Eine erste hohe
+            des Prasidenten, das wie eine Burg wirkt. Eine erste hohe
             Ziegelmauer, innen eine weitere, dahinter sein Haus. Willkommen auf
             dem Anwesen von Alfred Kapichira Banda.
           </p>
@@ -211,9 +242,9 @@
 
       <section class="step">
         <div class="step__canvas">
-          VIDEO [Der Großgrundbesitzer Alfred Kapichira Banda erzählt, dass es
-          gar keine Kinderarbeit gäbe – während im Hintergrund auf seiner Farm
-          14-Jährige Tabak trocknen.]
+          VIDEO [Der Großgrundbesitzer Alfred Kapichira Banda erzahlt, dass es
+          gar keine Kinderarbeit gabe – wahrend im Hintergrund auf seiner Farm
+          14-Jahrige Tabak trocknen.]
 
           BONUS Bildergalerie arbeitender Kindern
 
@@ -225,13 +256,13 @@
       <section class="step">
         <div class="step__canvas">
           <p class="step__teaser">
-            Während Malawis Regierung weg will vom Tabak, halten andere daran
+            Wahrend Malawis Regierung weg will vom Tabak, halten andere daran
             fest. Ausgerechnet ein großes Entwicklungsprogramm behindert Malawis
             Exitstrategie aus dem Tabak. 2012 haben die G8 – die Gruppe der
-            führenden Industrienationen und Russland – die New Alliance for
-            Food Security and Nutrition (NAFSN) gegründet, die „Neue Allianz
-            für Ernährungssicherheit und Ernährung“. Das Ziel: Binnen zehn
-            Jahren in zehn afrikanischen Ländern 50 Millionen Menschen aus der
+            führenden Industrienationen und Russland – die New Alliance for
+            Food Security and Nutrition (NAFSN) gegründet, die „Neue Allianz
+            für Ernahrungssicherheit und Ernahrung“. Das Ziel: Binnen zehn
+            Jahren in zehn afrikanischen Landern 50 Millionen Menschen aus der
             Armut und somit vom Hunger befreien. Das Rezept: Public Private
             Partnerships, kurz PPP, gemeinsame Investitionen von Staat und
             Wirtschaft.
@@ -257,16 +288,16 @@
             In Malawi beteiligen sich an der New Alliance auch die US-Konzerne
             Alliance One International und Limbe Leaf, ein Tochterunternehmen
             von Universal Corportation. Gemeinsam kaufen die beiden Giganten
-            auf dem Markt für Rohtabak jedes Jahr etwa 90 Prozent der Tabakernte
-            in Malawi. Mit Hilfe der New Alliance wollen sie ihr Geschäft
+            auf dem Markt für Rohtabak jedes Jahr etwa 90 Prozent der Tabakernte
+            in Malawi. Mit Hilfe der New Alliance wollen sie ihr Geschaft
             ausweiten.
           </p>
 
           <p class="step__teaser">
-            Alliance One will eigene Tabakforschungsinstitute gründen und in
+            Alliance One will eigene Tabakforschungsinstitute gründen und in
             großem Stil neues Land erwerben. Derzeit besitzt man 61.000 Hektar
             Land, 121.000 Hektar sollen es werden. Aber ist Malawi nicht jetzt
-            schon zu abhängig vom Tabak? Wir haben bei Alliance One nachgefragt.
+            schon zu abhangig vom Tabak? Wir haben bei Alliance One nachgefragt.
           </p>
 
           <a href="#step2"
@@ -276,10 +307,10 @@
 
       <section class="step">
         <div class="step__canvas">
-          VIDEO [Ronald Ngwira, Produktionsmanger bei Alliance One, erklärt die
-          Probleme des Tabakgeschäfts in Malawi. Er spricht sich dennoch dafür
+          VIDEO [Ronald Ngwira, Produktionsmanger bei Alliance One, erklart die
+          Probleme des Tabakgeschafts in Malawi. Er spricht sich dennoch dafür
           aus, dass Malawi sicht nicht komplett vom Tabak abwenden sollte.
-          Ngwira plädiert für eine “Diversifizierung mit Tabak”.]
+          Ngwira pladiert für eine “Diversifizierung mit Tabak”.]
 
           <a href="#step2"
              class="button">Weiter</a>
@@ -289,18 +320,18 @@
       <section class="step">
         <div class="step__canvas">
           <p class="step__teaser">
-            Mit der Tabakindustrie gegen Hunger? Rauchen für Malawi?<br/>
-            Für die Umsetzung der New Alliance in Malawi ist die Europäische
-            Union zuständig. Die Grünen-Abgeordnete Maria Heubuch erstattet dem
-            Ausschuss des EU-Parlaments für Entwicklung Bericht. Heubuchs Fazit
-            fällt vernichtend aus: Sie empfiehlt der EU, aus der New Alliance
+            Mit der Tabakindustrie gegen Hunger? Rauchen für Malawi?<br/>
+            Für die Umsetzung der New Alliance in Malawi ist die Europaische
+            Union zustandig. Die Grünen-Abgeordnete Maria Heubuch erstattet dem
+            Ausschuss des EU-Parlaments für Entwicklung Bericht. Heubuchs Fazit
+            fallt vernichtend aus: Sie empfiehlt der EU, aus der New Alliance
             auszusteigen.
           </p>
 
           <p class="step__teaser">
             Dieser Kritik pflichtet auch Donald Makoka bei. Der
             Entwicklungsökonom gilt als einer der ausgewiesensten Kenner des
-            malawischen Tabaksektors. Im Interview erklären Heubuch und Makoka,
+            malawischen Tabaksektors. Im Interview erklaren Heubuch und Makoka,
             vor welchen Problemen Malawi steht und welche Rolle Tabakindustrie
             und New Alliance dabei spielen.
           </p>
@@ -325,5 +356,8 @@
         </div>
       </section>
     </main>
+
+    <script src="../dist/scripts/app.js"
+            async></script>
   </body>
 </html>

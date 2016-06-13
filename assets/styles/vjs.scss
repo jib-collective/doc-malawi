@@ -1,0 +1,48 @@
+.vjs {
+  &-big-play-button,
+  &-volume-menu-button,
+  &-remaining-time,
+  &-chapters-button,
+  &-fullscreen-control,
+  &-descriptions-button,
+  &-load-progress,
+  &-playback-rate,
+  &-live-control,
+  &-subtitles-button,
+  &-captions-button,
+  &-current-time,
+  &-time-control,
+  &-duration,
+  &-audio-button {
+    display: none;
+  }
+
+  &-control-bar {
+    background-color: rgba(0, 0, 0, .8);
+    bottom: 0;
+    display: flex;
+    left: 0;
+    position: absolute;
+    width: 100%;
+
+    > * {
+      //
+    }
+  }
+
+  &-play-control {
+    background: none;
+    border: none;
+    border-right: 1px solid white;
+    color: white;
+    padding: .2rem 1rem;
+  }
+
+  &-progress-holder {
+    position: relative;
+  }
+
+  &-play-progress {
+    background-color: white;
+  }
+}

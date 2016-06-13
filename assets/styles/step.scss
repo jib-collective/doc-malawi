@@ -1,29 +1,61 @@
 .step {
-  height: 100vh;
-  position: relative;
-  width: 100vw;
+  background-color: $color-background;
+  background-position: center center;
+  background-size: cover;
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  width: 100%;
+
+  &--active {
+    z-index: 100 !important;
+  }
 
   &__canvas {
     left: 50%;
-    padding: 1.5rem;
+    padding: 1rem;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    max-width: 40rem;
+    max-width: 42rem;
     width: 100%;
+
+    @include small {
+      background-color: rgba(0, 0, 0, .45);
+      padding: 1.5rem;
+    }
   }
 
   &__headline {
-    font-family: Arial;
-    font-size: 2.8rem;
+    font-family: 'Rubik', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
     line-height: 1.2;
-    margin-bottom: 0;
+    margin-bottom: .2rem;
     margin-top: 0;
     text-transform: uppercase;
+
+    @include small {
+      font-size: 2.4rem;
+    }
+
+    @include medium {
+      font-size: 3.2rem;
+    }
   }
 
   &__teaser {
-    font-family: Georgia;
+    font-family: 'Open Sans';
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: 1.7rem;
     margin-top: 0;
+    text-shadow: 0 0 6px rgba(0, 0, 0, .8);
+
+    @include small {
+      font-size: 1.25rem;
+    }
   }
 }

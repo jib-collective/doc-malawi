@@ -1,6 +1,29 @@
 .header {
-  background-color: white;
+  padding-right: 1.5rem;
+  padding-top: 1.5rem;
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 400;
+
+  &__button {
+    background: transparent;
+    border: none;
+    color: white;
+    display: inline-block;
+    float: right;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__button-icon {
+    height: 1.5rem;
+    margin-right: .1rem;
+    vertical-align: middle;
+    width: 1.5rem;
+  }
 }
