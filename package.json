@@ -30,5 +30,8 @@
     "jquery": "^3.0.0",
     "screenfull": "^3.0.0",
     "video.js": "^5.10.4"
+  },
+  "devDependencies": {
+    "express": "^4.13.4"
   }
 }

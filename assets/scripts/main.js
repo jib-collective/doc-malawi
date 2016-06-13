@@ -1,4 +1,3 @@
-window.HELP_IMPROVE_VIDEOJS = false;
 var $steps;
 
 var nextSlide = function() {
@@ -30,8 +29,6 @@ $(() => {
     $this.css('z-index', $steps.length - index);
   });
 
-
-
   hammertime.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });
 
   hammertime.on('swipe', function(e) {
@@ -55,27 +52,26 @@ $(() => {
 
     var targetId = $(this).data('target');
 
-    if(history) {
-      //history.pushState(undefined, undefined, $(this).attr('href'));
-    }
-
     if(targetId) {
-      var timeline = new TimelineLite({
-        onComplete: function() {
-          $steps.filter('.step--active').data('step').destroy();
-          $steps.eq(targetId).data('step').init();
-        },
+      $steps.filter('.step--active').data('step').destroy(function() {
+        $steps.eq(targetId).data('step').init();
       });
-
-      timeline.add(
-        TweenLite.to($steps.filter('.step--active').get(0), 1, {
-          ease: Power1.easeIn,
-          delay: 0.1,
-          opacity: 0,
-        })
-      );
-
-      timeline.play();
     }
   });
+
+  if(history) {
+    var currentUrl = window.location.href;
+    var urlParts = currentUrl.split('/');
+    var lastUrlPart = urlParts[urlParts.length - 1];
+
+    $.each($steps, function() {
+      var $step = $(this);
+
+      if($step.data('url') === lastUrlPart) {
+        $steps.filter('.step--active').data('step').destroy();
+        $step.data('step').init();
+      }
+    });
+
+  }
 });

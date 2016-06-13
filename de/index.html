@@ -6,12 +6,13 @@
     <meta name="viewport"
           content="width=device-width">
 
-    <link href="https://fonts.googleapis.com/css?family=Rubik:900|Open+Sans:400"
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto"
           rel="stylesheet"
           type="text/css">
 
     <link rel="stylesheet"
           href="../dist/styles/main.css">
+
     <meta charset="utf-8">
   </head>
 
@@ -31,7 +32,8 @@
       </header>
 
       <section class="step step--active"
-               style="background-image: url(../dist/images/malawi_1.jpg);">
+               style="background-image: url(../dist/images/malawi_1.jpg);"
+               data-url="intro">
         <div class="step__canvas">
           <h1 class="step__headline">Voll abhängig</h1>
           <p class="step__teaser">
@@ -41,7 +43,7 @@
             ausgerechnet die sogenannte Entwicklungshilfe.
           </p>
 
-          <a href="/video1"
+          <a href="video1"
              class="button button--intro js-step-goto"
              data-target="1">
             <svg class="button__icon"
@@ -51,12 +53,16 @@
                  xmlns="http://www.w3.org/2000/svg">
               <path d="M1576 927l-1328 738q-23 13-39.5 3t-16.5-36v-1472q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z" fill="#fff"/>
             </svg>
-            Anschauen
+            <span class="button__label">
+              Anschauen
+              <small class="button__subtext">Lesezeit ca. 15min</small>
+            </span>
           </a>
         </div>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="bunny">
         <!--
         VIDEO:[Inhalt: Tabakbauer Erisa Chisenga erzahlt, wie schwierig der
         Tabakanbau ist. Er deutet an, dass die Tabakbauern ausgebeutet werden.]
@@ -70,7 +76,8 @@
         </video>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="chisenga">
         <div class="step__canvas">
           <p class="step__teaser">
             Jeden Tag streift Erisa Chisenga durch sein Feld von 100 mal 100

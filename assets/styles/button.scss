@@ -11,7 +11,7 @@
     border-color: darken($color-attention, 10%);
     display: inline-block;
     font-family: 'Rubik', sans-serif;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     line-height: 1;
     padding: .8rem 1.5rem .65rem 1.2rem;
@@ -33,5 +33,18 @@
     margin-right: .3rem;
     vertical-align: middle;
     width: 1.5rem;
+  }
+
+  &__label {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &__subtext {
+    display: block;
+    font-size: .7rem;
+    font-weight: normal;
+    margin-top: .1rem;
+    text-transform: none;
   }
 }

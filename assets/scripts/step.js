@@ -6,6 +6,10 @@ Step.prototype = {
   init: function() {
     this.$el.addClass('step--active');
 
+    if(history) {
+      history.pushState(undefined, undefined, this.$el.data('url'));
+    }
+
     this._addBindings();
     this._initVideos();
   },
@@ -27,12 +31,30 @@ Step.prototype = {
 
       $video.get(0).addEventListener('ended', function() {
         nextSlide();
-        console.log('Next slide');
       });
     });
   },
 
-  destroy: function() {
-    this.$el.removeClass('step--active');
+  destroy: function(cb) {
+    var self = this;
+    var timeline = new TimelineLite({
+      onComplete: function() {
+        self.$el.removeClass('step--active');
+
+        if(typeof(cb) === 'function') {
+          cb();
+        }
+      },
+    });
+
+    timeline.add(
+      TweenLite.to(self.$el.get(0), 1.5, {
+        ease: Power1.easeOut,
+        delay: 0.1,
+        opacity: 0,
+      })
+    );
+
+    timeline.play();
   },
 };
