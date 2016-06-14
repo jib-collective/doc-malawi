@@ -15,6 +15,8 @@
   <body>
     <main class="app">
       <header class="header">
+        <div class="header__progress js-progress"></div>
+
         <button class="header__button js-toggle-fullscreen">
           <svg class="header__button-icon"
                width="1792"
@@ -58,22 +60,16 @@
       </section>
 
       <section class="step"
-               data-url="bunny">
-        <!--
-        VIDEO:[Inhalt: Tabakbauer Erisa Chisenga erzahlt, wie schwierig der
-        Tabakanbau ist. Er deutet an, dass die Tabakbauern ausgebeutet werden.]
-        -->
-
+               data-url="chisenga">
         <video class="js-video js-video-play video video--fullscreen"
-               preload="auto"
-               muted>
-          <source src="../dist/videos/big_buck_bunny.mp4"
+               preload="auto">
+          <source src="../dist/videos/malawi_chisenga_1.mp4"
                   type="video/mp4">
         </video>
       </section>
 
       <section class="step"
-               data-url="chisenga">
+               data-url="chisenga-hope">
         <div class="step__canvas">
           <p class="step__teaser">
             Jeden Tag streift Erisa Chisenga durch sein Feld von 100 mal 100
@@ -89,7 +85,8 @@
         </div>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="map-malawi">
         <div class="step__canvas">
           GRAFIK/ KARTE [Die Karte verortet Malawi in Umrissen auf dem
           afrikanischen Kontinent.]
@@ -98,7 +95,8 @@
         </div>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="dependency">
         <div class="step__canvas">
           <p class="step__teaser">
             Ohne Devisen, keine Importe. Anders ausgedrückt: Malawi ist

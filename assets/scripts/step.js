@@ -1,5 +1,6 @@
-var Step = function($el) {
+var Step = function($el, options) {
   this.$el = $el;
+  this.options = options;
 };
 
 Step.prototype = {
@@ -12,6 +13,7 @@ Step.prototype = {
 
     this._addBindings();
     this._initVideos();
+    this._updateProgress();
   },
 
   _addBindings: function() {
@@ -33,6 +35,14 @@ Step.prototype = {
         nextSlide();
       });
     });
+  },
+
+  _updateProgress: function() {
+    var index = this.options.$steps.index();
+    var stepsLength = this.options.$steps.length;
+    var $progress = $('.header__progress');
+
+    $progress.css('width', (stepsLength / index) + '%');
   },
 
   destroy: function(cb) {

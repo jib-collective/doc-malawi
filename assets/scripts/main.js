@@ -24,7 +24,7 @@ $(() => {
 
   $.each($steps, function(index) {
     var $this = $(this);
-    $this.data('step', new Step($this));
+    $this.data('step', new Step($this, {'$steps': $steps}));
 
     $this.css('z-index', $steps.length - index);
   });

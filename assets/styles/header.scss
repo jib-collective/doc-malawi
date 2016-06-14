@@ -26,4 +26,13 @@
     vertical-align: middle;
     width: 1.5rem;
   }
+
+  &__progress {
+    background-color: $color-attention;
+    height: .25rem;
+    position: absolute;
+    top: 0;
+    transition: width .2s ease-out;
+    width: 0;
+  }
 }
