@@ -1,5 +1,7 @@
 var $steps;
 
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VzdGF2cHVyc2NoZSIsImEiOiJhVVRUaFV3In0.IdUObuDS1u0tzNNDvNpfKg';
+
 var nextSlide = function() {
   var $currentSlide = $steps.filter('.step--active');
   var currentSlideId = $currentSlide.index();

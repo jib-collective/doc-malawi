@@ -13,6 +13,7 @@ Step.prototype = {
 
     this._addBindings();
     this._initVideos();
+    this._initMaps();
     this._updateProgress();
   },
 
@@ -33,6 +34,24 @@ Step.prototype = {
 
       $video.get(0).addEventListener('ended', function() {
         nextSlide();
+      });
+    });
+  },
+
+  _initMaps: function() {
+    var self = this;
+    var $maps = this.$el.find('.js-map');
+
+    $.each($maps, function() {
+      var $map = $(this);
+      self.map = new mapboxgl.Map({
+        center: [
+          -9.631307,
+          24.146892
+        ],
+        container: $map.get(0),
+        style: 'mapbox://styles/mapbox/dark-v9',
+        zoom: 2.5,
       });
     });
   },

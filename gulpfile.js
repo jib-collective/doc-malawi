@@ -4,6 +4,7 @@ const cloudfront = require('gulp-cloudfront-invalidate');
 const concat = require('gulp-concat');
 const cssnano = require('gulp-cssnano');
 const gulp = require('gulp');
+const gulpIf = require('gulp-if');
 const imagemin = require('gulp-imagemin');
 const awspublish = require('gulp-awspublish');
 const rename = require('gulp-rename');
@@ -23,8 +24,12 @@ const cloudfrontConfig = {
 };
 
 gulp.task('styles', () => {
-  return gulp.src('./assets/styles/main.scss')
-    .pipe(sass().on('error', sass.logError))
+  return gulp.src([
+    './node_modules/mapbox-gl/dist/mapbox-gl.css',
+    './assets/styles/main.scss',
+  ])
+    .pipe(gulpIf('*.scss', sass().on('error', sass.logError)))
+    .pipe(concat('main.css'))
     .pipe(cssnano({
       autoprefixer: true,
       zindex: false,
@@ -40,6 +45,7 @@ gulp.task('scripts', () => {
     './node_modules/gsap/src/uncompressed/TweenLite.js',
     './node_modules/gsap/src/uncompressed/TimelineLite.js',
     './node_modules/gsap/src/uncompressed/plugins/CSSPlugin.js',
+    './node_modules/mapbox-gl/dist/mapbox-gl.js',
     './assets/scripts/step.js',
     './assets/scripts/main.js',
   ])
