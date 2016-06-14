@@ -2,6 +2,31 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../dist/fonts/Roboto-Slab-Bold.eot);
+  src: local('Roboto Slab Bold'),
+       local('RobotoSlab-Bold'),
+       url(../fonts/Roboto-Slab-Bold.woff) format('woff'),
+       url(../fonts/Roboto-Slab-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Lato-Regular.eot);
+  src: local('Lato Regular'),
+       local('Lato-Regular'),
+       local('Lato'),
+       url(../fonts/Lato-Regular.woff) format('woff'),
+       url(../fonts/Lato-Regular.svg#Lato) format('svg'),
+       url(../fonts/Lato-Regular.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/Lato-Regular.ttf) format('truetype');
+}
+
 body {
   color: $color-text;
   line-height: 1.4;

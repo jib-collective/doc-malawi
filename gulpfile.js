@@ -54,6 +54,13 @@ gulp.task('videos', () => {
     .pipe(gulp.dest('./dist/videos/'));
 });
 
+gulp.task('fonts', () => {
+  return gulp.src([
+    './assets/fonts/**/*',
+  ])
+    .pipe(gulp.dest('./dist/fonts/'));
+});
+
 gulp.task('images', () => {
   return gulp.src([
     './assets/images/**/*',
@@ -99,4 +106,5 @@ gulp.task('default', [
   'styles',
   'scripts',
   'videos',
-])
+  'fonts',
+]);
