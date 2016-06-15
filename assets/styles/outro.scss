@@ -1,0 +1,114 @@
+.outro {
+  font-family: $font-family-sans-serif;
+
+  &__title {
+    display: block;
+    font-family: $font-family-serif;
+    font-size: 2.8rem;
+    line-height: 1;
+
+    @include medium {
+      margin-left: 12rem;
+    }
+  }
+
+  &__subtitle {
+    font-family: $font-family-sans-serif;
+    font-size: 1.4rem;
+
+    @include medium {
+      margin-left: 12rem;
+    }
+  }
+
+  &__credits {
+    @include clearfix();
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 1.5rem;
+
+    dt,
+    dd {
+      display: block;
+
+      @include medium {
+        float: left
+      }
+    }
+
+    dt {
+      clear: left;
+      font-family: $font-family-serif;
+      padding-right: 1.5rem;
+
+      @include medium {
+        text-align: right;
+        width: 12rem;
+      }
+    }
+
+    dd {
+      margin-bottom: 1rem;
+      margin-left: 0;
+
+      @include medium {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__logos {
+    @include clearfix();
+    list-style: none;
+    margin: 1.5rem 0 0 0;
+    padding: 0;
+
+    @include medium {
+      margin-top: 4rem;
+    }
+
+    > li {
+      display: block;
+      vertical-align: top;
+      width: 100%;
+
+      @include medium {
+        display: inline-block;
+        width: 33%;
+      }
+    }
+
+    > li + li {
+      margin-top: 1rem;
+
+      @include medium {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    padding: .5rem;
+
+    &,
+    > * {
+      line-height: 1;
+      margin: 0;
+    }
+
+    > svg {
+      height: 4rem;
+      width: 100%;
+    }
+
+    > img {
+      height: auto;
+      width: 100%;
+    }
+
+    &--white {
+      background-color: white;
+    }
+  }
+}

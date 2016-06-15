@@ -9,6 +9,7 @@ const imagemin = require('gulp-imagemin');
 const awspublish = require('gulp-awspublish');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
+const svgSprite = require('gulp-svg-sprite');
 
 const s3Config = require('./aws.json').s3;
 const cloudfrontConfig = {
@@ -68,10 +69,24 @@ gulp.task('fonts', () => {
 });
 
 gulp.task('images', () => {
+  const svgSpriteConfig = {
+    mode: {
+      css: false,
+      defs: {
+        dest: '',
+        sprite: './sprite.svg',
+      },
+      stack: false,
+      symbol: false,
+      view: false,
+    },
+  };
+
   return gulp.src([
     './assets/images/**/*',
   ])
     .pipe(imagemin())
+    .pipe(gulpIf('*.svg', svgSprite(svgSpriteConfig)))
     .pipe(gulp.dest('./dist/images'));
 });
 
@@ -112,5 +127,6 @@ gulp.task('default', [
   'styles',
   'scripts',
   'videos',
+  'images',
   'fonts',
 ]);
