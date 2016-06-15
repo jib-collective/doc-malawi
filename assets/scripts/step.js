@@ -8,7 +8,13 @@ Step.prototype = {
     this.$el.addClass('step--active');
 
     if(history) {
-      history.pushState(undefined, undefined, this.$el.data('url'));
+      var url = this.$el.data('url');
+
+      if(url === 'intro') {
+        url = '';
+      }
+
+      history.pushState(undefined, undefined, url);
     }
 
     this._initVideos();
@@ -86,6 +92,10 @@ Step.prototype = {
       onComplete: function() {
         self.$el.removeClass('step--active');
 
+        if(self.video) {
+          self.video.pause();
+        }
+
         if(typeof(cb) === 'function') {
           cb();
         }
@@ -101,9 +111,5 @@ Step.prototype = {
     );
 
     timeline.play();
-
-    if(this.video) {
-      this.video.pause();
-    }
   },
 };

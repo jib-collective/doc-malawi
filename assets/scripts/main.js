@@ -7,6 +7,10 @@ var nextSlide = function() {
   var currentSlideId = $currentSlide.index();
   var $nextSlide = $steps.eq(currentSlideId + 1);
 
+  if(currentSlideId + 1 > $steps.length) {
+    return;
+  }
+
   $currentSlide.data('step').destroy(function() {
     $nextSlide.data('step').init();
   });
@@ -16,6 +20,10 @@ var prevSlide = function() {
   var $currentSlide = $steps.filter('.step--active');
   var currentSlideId = $currentSlide.index();
   var $nextSlide = $steps.eq(currentSlideId - 1);
+
+  if(currentSlideId - 1 < 0) {
+    return;
+  }
 
   $currentSlide.data('step').destroy(function() {
     $nextSlide.data('step').init();
@@ -99,4 +107,15 @@ $(() => {
       }
     });
   }
+
+  $(window).on('keydown', function(e) {
+    switch(e.which) {
+      case 39:
+        nextSlide();
+        break;
+      case 37:
+        prevSlide();
+        break;
+    }
+  });
 });
