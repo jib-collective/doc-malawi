@@ -1,14 +1,18 @@
 .video {
   &--fullscreen {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
     &,
     > video {
+      height: auto;
       min-height: 100%;
       left: 50%;
-      min-width: 100%;
       position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      min-width: 100%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 100%;
     }
   }
 }

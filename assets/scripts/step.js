@@ -29,14 +29,14 @@ Step.prototype = {
       var $video = $(this);
 
       if($video.hasClass('js-video-play')) {
-        $video.get(0).play();
+        self.video = videojs($video.get(0), {controls: true}, function() {
+          this.play();
+        });
       }
 
-      $video.get(0).addEventListener('ended', function() {
+      self.video.on('ended', function() {
         nextSlide();
       });
-
-      self.video = $video.get(0);
     });
   },
 

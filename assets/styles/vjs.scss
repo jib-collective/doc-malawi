@@ -1,48 +1,100 @@
 .vjs {
+  &-control-bar {
+    background-color: $color-attention;
+    border-bottom: 6px solid darken($color-attention, 5%);
+    bottom: 0;
+    display: none;
+    font-family: $font-family-sans-serif;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: auto;
+  }
+
+  &-vjs-control {
+    height: 100%;
+    position: relative;
+    width: 4rem;
+  }
+
+  &-has-started &-control-bar {
+    display: flex;
+  }
+
   &-big-play-button,
-  &-volume-menu-button,
-  &-remaining-time,
-  &-chapters-button,
-  &-fullscreen-control,
-  &-descriptions-button,
-  &-load-progress,
+  &-loading-spinner,
   &-playback-rate,
-  &-live-control,
-  &-subtitles-button,
+  &-chapters-button,
+  &-descriptions-button,
   &-captions-button,
+  &-subtitles-button,
+  &-modal-dialog,
+  &-modal-overlay,
+  &-hidden,
+  &-volume-menu-button,
+  &-fullscreen-control,
+  &-load-progress,
+  &-play-progress > &-control-text,
   &-current-time,
-  &-time-control,
   &-duration,
-  &-audio-button {
+  &-time-divider,
+  &-remaining-time-display > &-control-text {
     display: none;
   }
 
-  &-control-bar {
-    background-color: rgba(0, 0, 0, .8);
-    bottom: 0;
-    display: flex;
-    left: 0;
-    position: absolute;
-    width: 100%;
-
-    > * {
-      //
-    }
-  }
-
-  &-play-control {
-    background: none;
-    border: none;
-    border-right: 1px solid white;
-    color: white;
-    padding: .2rem 1rem;
-  }
-
-  &-progress-holder {
+  &-progress-control {
     position: relative;
   }
 
   &-play-progress {
     background-color: white;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  &-remaining-time {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 6rem;
+  }
+
+  &-remaining-time-display {
+    font-family: $font-family-serif;
+    font-size: 1.4rem;
+    letter-spacing: .05rem;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+
+  &-play-control {
+    background: darken($color-attention, 5%);
+    border: none;
+    border-right: 1px solid darken($color-attention, 10%);
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: $font-weight-sans-serif;
+    outline: none;
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    vertical-align: middle;
+
+    &:hover,
+    &:focus {
+      background: darken($color-attention, 10%);
+    }
+
+    &:active {
+      background: darken($color-attention, 15%);
+    }
   }
 }
