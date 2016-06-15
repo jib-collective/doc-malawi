@@ -7,8 +7,9 @@ var nextSlide = function() {
   var currentSlideId = $currentSlide.index();
   var $nextSlide = $steps.eq(currentSlideId + 1);
 
-  $currentSlide.data('step').destroy();
-  $nextSlide.data('step').init();
+  $currentSlide.data('step').destroy(function() {
+    $nextSlide.data('step').init();
+  });
 };
 
 var prevSlide = function() {
@@ -16,19 +17,19 @@ var prevSlide = function() {
   var currentSlideId = $currentSlide.index();
   var $nextSlide = $steps.eq(currentSlideId - 1);
 
-  $currentSlide.data('step').destroy();
-  $nextSlide.data('step').init();
+  $currentSlide.data('step').destroy(function() {
+    $nextSlide.data('step').init();
+  });
 };
 
 var gotoSlide = function(slug) {
   var $targetSlide = $steps.filter('[data-url="' + slug + '"]');
   var $currentSlide = $steps.filter('.step--active');
 
-  console.log(slug);
-
   if($targetSlide.length) {
-    $currentSlide.data('step').destroy();
-    $targetSlide.data('step').init();
+    $currentSlide.data('step').destroy(function() {
+      $targetSlide.data('step').init();
+    });
   }
 };
 
@@ -82,11 +83,7 @@ $(() => {
 
     var targetId = $(this).data('target');
 
-    if(targetId) {
-      $steps.filter('.step--active').data('step').destroy(function() {
-        $steps.eq(targetId).data('step').init();
-      });
-    }
+    gotoSlide($(this).attr('href'));
   });
 
   if(history) {
@@ -98,10 +95,8 @@ $(() => {
       var $step = $(this);
 
       if($step.data('url') === lastUrlPart) {
-        $steps.filter('.step--active').data('step').destroy();
-        $step.data('step').init();
+        gotoSlide($step.data('url'));
       }
     });
-
   }
 });
