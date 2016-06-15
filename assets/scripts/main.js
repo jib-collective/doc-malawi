@@ -20,15 +20,43 @@ var prevSlide = function() {
   $nextSlide.data('step').init();
 };
 
+var gotoSlide = function(slug) {
+  var $targetSlide = $steps.filter('[data-url="' + slug + '"]');
+  var $currentSlide = $steps.filter('.step--active');
+
+  console.log(slug);
+
+  if($targetSlide.length) {
+    $currentSlide.data('step').destroy();
+    $targetSlide.data('step').init();
+  }
+};
+
 $(() => {
   var hammertime = new Hammer($('.app').get(0), {});
   $steps = $('.step');
 
   $.each($steps, function(index) {
     var $this = $(this);
+    var $progressLink = $('<a/>')
+      .attr({
+        href: $this.data('url'),
+      })
+      .addClass('header__progress-step')
+      .css({
+        left: ((index / $steps.length) * 100) + '%',
+      });
+
     $this.data('step', new Step($this, {'$steps': $steps}));
 
     $this.css('z-index', $steps.length - index);
+
+    $progressLink.on('click', function(e) {
+      e.preventDefault();
+      gotoSlide($(this).attr('href'));
+    })
+
+    $('.header__progress').append($progressLink);
   });
 
   hammertime.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });

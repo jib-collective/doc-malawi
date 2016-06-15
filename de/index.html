@@ -15,7 +15,9 @@
   <body>
     <main class="app">
       <header class="header">
-        <div class="header__progress js-progress"></div>
+        <div class="header__progress js-progress">
+          <div class="header__progress-bar"></div>
+        </div>
 
         <button class="header__button js-toggle-fullscreen">
           <svg class="header__button-icon"
@@ -115,12 +117,13 @@
             Zigarettenfirmen das Leben. Was, wenn die Nachfrage weiter sinkt?
           </p>
 
-          <a href="#step2"
+          <a href="answers"
              class="button">Weiter</a>
         </div>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="answers">
         <div class="step__canvas">
           [FOTO] -> Text Blende
 
@@ -130,12 +133,13 @@
             vom Tabak, der bislang die wichtigste Einnahmequelle ist?
           </p>
 
-          <a href="#step2"
+          <a href="opening"
              class="button">Weiter</a>
         </div>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="opening">
         <div class="step__canvas">
           <p class="step__teaser">
             Traditionell eröffnet der Prasident von Malawi die jahrliche
@@ -150,7 +154,7 @@
             malawischen Regierung:
           </p>
 
-          <a href="#step2"
+          <a href="gondwe"
              class="button">Weiter</a>
         </div>
       </section>
@@ -181,12 +185,13 @@
             Gesundheit der Bauern.
           </p>
 
-          <a href="#step2"
+          <a href="aspects"
              class="button">Weiter</a>
         </div>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="aspects">
         <div class="step__canvas">
           GRAFIK [Aspekt Gesundheitsgefahren]
           <a href="#step2"
@@ -202,7 +207,8 @@
         </div>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="bandas-children">
         <div class="step__canvas">
           <p class="step__teaser">
             Kinderarbeit? Manch ein Großverdiener im Tabakgeschaft wehrt sich
@@ -239,16 +245,15 @@
 
       <section class="step"
                data-url="banda">
-        <div class="step__canvas">
-          <video class="js-video js-video-play video video--fullscreen"
-                 preload="auto">
-            <source src="../dist/videos/malawi_banda_3.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
+        <video class="js-video js-video-play video video--fullscreen"
+              preload="auto">
+         <source src="../dist/videos/malawi_banda_3.mp4"
+                 type="video/mp4">
+        </video>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="public-private-partnerships">
         <div class="step__canvas">
           <p class="step__teaser">
             Wahrend Malawis Regierung weg will vom Tabak, halten andere daran
@@ -277,7 +282,8 @@
         </div>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="new-alliance">
         <div class="step__canvas">
           <p class="step__teaser">
             In Malawi beteiligen sich an der New Alliance auch die US-Konzerne
@@ -300,19 +306,17 @@
         </div>
       </section>
 
-      <section class="step">
-        <div class="step__canvas">
-          VIDEO [Ronald Ngwira, Produktionsmanger bei Alliance One, erklart die
-          Probleme des Tabakgeschafts in Malawi. Er spricht sich dennoch dafür
-          aus, dass Malawi sicht nicht komplett vom Tabak abwenden sollte.
-          Ngwira pladiert für eine “Diversifizierung mit Tabak”.]
-
-          <a href="#step2"
-             class="button">Weiter</a>
-        </div>
+      <section class="step"
+               data-url="ngwira">
+        <video class="js-video js-video-play video video--fullscreen"
+              preload="auto">
+         <source src="../dist/videos/malawi_ngwira_4.mp4"
+                 type="video/mp4">
+        </video>
       </section>
 
-      <section class="step">
+      <section class="step"
+               data-url="eu">
         <div class="step__canvas">
           <p class="step__teaser">
             Mit der Tabakindustrie gegen Hunger? Rauchen für Malawi?<br/>
@@ -336,13 +340,13 @@
         </div>
       </section>
 
-      <section class="step">
-        <div class="step__canvas">
-          VIDEO Maria Heubuch (Deutsch) und Donald Makoka (Englisch)
-
-          <a href="#step2"
-             class="button">Anschauen</a>
-        </div>
+      <section class="step"
+               data-url="makoka-heubuch">
+        <video class="js-video js-video-play video video--fullscreen"
+              preload="auto">
+         <source src="../dist/videos/malawi_makoka-heubuch_5.mp4"
+                 type="video/mp4">
+        </video>
       </section>
 
       <section class="step"

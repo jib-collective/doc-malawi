@@ -35,6 +35,8 @@ Step.prototype = {
       $video.get(0).addEventListener('ended', function() {
         nextSlide();
       });
+
+      self.video = $video.get(0);
     });
   },
 
@@ -46,22 +48,41 @@ Step.prototype = {
       var $map = $(this);
       self.map = new mapboxgl.Map({
         center: [
-          -9.631307,
-          24.146892
+          22.708734,
+          7.099980,
         ],
         container: $map.get(0),
+        interactive: false,
         style: 'mapbox://styles/mapbox/dark-v9',
-        zoom: 2.5,
+        zoom: 2,
+      });
+
+      self.map.on('load', function() {
+        setTimeout(function() {
+          self.map.easeTo({
+            center: [
+              33.901221,
+              -13.363024,
+            ],
+            zoom: 5.5,
+          });
+        }, 3000);
       });
     });
   },
 
   _updateProgress: function() {
-    var index = this.options.$steps.index();
+    var index = this.$el.index();
     var stepsLength = this.options.$steps.length;
-    var $progress = $('.header__progress');
+    var $progress = $('.header__progress-bar');
 
-    $progress.css('width', (stepsLength / index) + '%');
+    if(index === 0) {
+      index = 1;
+    } else {
+      index = index - 1;
+    }
+
+    $progress.css('width', 'calc(' + ((index / stepsLength) * 100) + '% + .5rem)');
   },
 
   destroy: function(cb) {
@@ -85,5 +106,9 @@ Step.prototype = {
     );
 
     timeline.play();
+
+    if(this.video) {
+      this.video.pause();
+    }
   },
 };
