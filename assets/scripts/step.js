@@ -11,14 +11,9 @@ Step.prototype = {
       history.pushState(undefined, undefined, this.$el.data('url'));
     }
 
-    this._addBindings();
     this._initVideos();
     this._initMaps();
     this._updateProgress();
-  },
-
-  _addBindings: function() {
-
   },
 
   _initVideos: function() {
