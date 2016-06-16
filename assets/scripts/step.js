@@ -29,6 +29,9 @@ Step.prototype = {
 
     $.each($videos, function() {
       var $video = $(this);
+      var $track = $video.children('track');
+
+      $track.attr('src', $track.data('src'));
 
       if($video.hasClass('js-video-play')) {
         self.video = videojs($video.get(0), {controls: true}, function() {
