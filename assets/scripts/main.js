@@ -31,7 +31,14 @@ var prevSlide = function() {
 };
 
 var gotoSlide = function(slug) {
-  var $targetSlide = $steps.filter('[data-url="' + slug + '"]');
+  var $targetSlide;
+
+  if(slug === '/') {
+    $targetSlide = $steps.eq(0);
+  } else {
+    $targetSlide = $steps.filter('[data-url="' + slug + '"]');
+  }
+
   var $currentSlide = $steps.filter('.step--active');
 
   if($targetSlide.length) {
@@ -47,26 +54,17 @@ $(() => {
 
   $.each($steps, function(index) {
     var $this = $(this);
-    var $progressLink = $('<a/>')
-      .attr({
-        href: $this.data('url'),
-      })
-      .addClass('header__progress-step')
-      .css({
-        left: ((index / $steps.length) * 100) + '%',
-      });
 
     $this.data('step', new Step($this, {'$steps': $steps}));
-
     $this.css('z-index', $steps.length - index);
-
-    $progressLink.on('click', function(e) {
-      e.preventDefault();
-      gotoSlide($(this).attr('href'));
-    })
-
-    $('.header__progress').append($progressLink);
   });
+
+  $('.js-navigation')
+    .on('click.navigation', '.navigation__link', function(e) {
+      e.preventDefault();
+      var target = $(this).attr('href');
+      gotoSlide(target);
+    });
 
   hammertime.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });
 

@@ -37,26 +37,12 @@
   }
 
   &__progress-bar {
-    background-color: white;
+    background-color: $color-attention;
     height: 100%;
     left: 0;
     position: absolute;
     top: 0;
     transition: width .2s ease-out;
     width: 0;
-  }
-
-  &__progress-step {
-    background-color: rgb(0, 0, 0);
-    display: block;
-    height: 1rem;
-    position: absolute;
-    top: 0;
-    width: 1rem;
-
-    &:hover,
-    &:focus {
-      background-color: rgb(255, 255, 255);
-    }
   }
 }

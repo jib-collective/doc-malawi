@@ -1,7 +1,7 @@
 .vjs {
   &-control-bar {
     background-color: $color-attention;
-    border-bottom: 6px solid darken($color-attention, 5%);
+    border-bottom: 6px solid darken($color-attention, 10%);
     bottom: 0;
     display: none;
     font-family: $font-family-sans-serif;
@@ -75,26 +75,46 @@
   }
 
   &-play-control {
-    background: darken($color-attention, 5%);
+    background: darken($color-attention, 10%);
     border: none;
-    border-right: 1px solid darken($color-attention, 10%);
+    border-left: 1px solid darken($color-attention, 15%);
+    border-right: 1px solid darken($color-attention, 15%);
     color: white;
     cursor: pointer;
     display: inline-block;
     font-size: .8rem;
     font-weight: $font-weight-sans-serif;
     outline: none;
-    padding: 1rem 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     text-transform: uppercase;
     vertical-align: middle;
 
     &:hover,
     &:focus {
-      background: darken($color-attention, 10%);
+      background: darken($color-attention, 15%);
     }
 
     &:active {
-      background: darken($color-attention, 15%);
+      background: darken($color-attention, 20%);
+    }
+  }
+
+  &-video-title {
+    padding: .5rem 1.5rem;
+    text-align: right;
+
+    > strong {
+      display: block;
+      font-family: $font-family-serif;
+      font-size: 1.1rem;
+      line-height: 1;
+      margin-bottom: -.1rem;
+    }
+
+    > small {
+      font-size: .8rem;
+      line-height: 1;
     }
   }
 }

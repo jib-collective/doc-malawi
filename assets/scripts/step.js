@@ -9,11 +9,6 @@ Step.prototype = {
 
     if(history) {
       var url = this.$el.data('url');
-
-      if(url === 'intro') {
-        url = '';
-      }
-
       history.pushState(undefined, undefined, url);
     }
 
@@ -31,6 +26,22 @@ Step.prototype = {
 
       if($video.hasClass('js-video-play')) {
         self.video = videojs($video.get(0), {controls: true}, function() {
+          var $videoContainer = $(self.video.el_);
+          var $controls = $videoContainer.find('.vjs-control-bar');
+          var title = $videoContainer.data('title');
+          var subtitle = $videoContainer.data('subtitle');
+
+          if(title || subtitle) {
+            var $title = $('<strong/>').text(title);
+            var $subtitle = $('<small/>').text(subtitle);
+            var $control = $('<span/>')
+                          .append($title)
+                          .append($subtitle)
+                          .addClass('vjs-video-title');
+
+            $controls.prepend($control);
+          }
+
           this.play();
         });
       }
