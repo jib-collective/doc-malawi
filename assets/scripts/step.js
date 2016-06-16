@@ -8,8 +8,6 @@ Step.prototype = {
     this.$el.addClass('step--active');
     this.url = this.$el.data('url');
 
-
-
     if(history) {
       var url = this.url;
 

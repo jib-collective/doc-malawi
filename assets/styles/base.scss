@@ -9,6 +9,7 @@
   src: url(../dist/fonts/Roboto-Slab-Bold.eot);
   src: local('Roboto Slab Bold'),
        local('RobotoSlab-Bold'),
+       url(../fonts/Roboto-Slab-Bold.woff2) format('woff2'),
        url(../fonts/Roboto-Slab-Bold.woff) format('woff'),
        url(../fonts/Roboto-Slab-Bold.ttf) format('truetype');
 }
@@ -21,6 +22,7 @@
   src: local('Lato Regular'),
        local('Lato-Regular'),
        local('Lato'),
+       url(../fonts/Lato-Regular.woff2) format('woff2'),
        url(../fonts/Lato-Regular.woff) format('woff'),
        url(../fonts/Lato-Regular.svg#Lato) format('svg'),
        url(../fonts/Lato-Regular.eot?#iefix) format('embedded-opentype'),

@@ -2,14 +2,18 @@
 
 const cloudfront = require('gulp-cloudfront-invalidate');
 const concat = require('gulp-concat');
+const parallelize = require('concurrent-transform');
 const cssnano = require('gulp-cssnano');
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
 const imagemin = require('gulp-imagemin');
 const awspublish = require('gulp-awspublish');
+const merge = require('merge-stream');
 const rename = require('gulp-rename');
+const replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
+const uglify = require('gulp-uglify');
 
 const s3Config = require('./aws.json').s3;
 const cloudfrontConfig = {
@@ -42,7 +46,6 @@ gulp.task('scripts', () => {
   return gulp.src([
     './node_modules/jquery/dist/jquery.js',
     './node_modules/screenfull/dist/screenfull.js',
-    './node_modules/hammerjs/hammer.js',
     './node_modules/video.js/dist/video.js',
     './node_modules/gsap/src/uncompressed/TweenLite.js',
     './node_modules/gsap/src/uncompressed/TimelineLite.js',
@@ -53,6 +56,14 @@ gulp.task('scripts', () => {
   ])
     .pipe(concat('app.js'))
     .pipe(gulp.dest('./dist/scripts/'))
+});
+
+gulp.task('html', () => {
+  return gulp.src([
+    './de/dev/**/*.html',
+  ])
+    .pipe(replace('{{url}}', '../'))
+    .pipe(gulp.dest('./de/'));
 });
 
 gulp.task('videos', () => {
@@ -98,40 +109,47 @@ gulp.task('images', () => {
     .pipe(gulp.dest('./dist/images'));
 });
 
-gulp.task('upload', ['styles'], () => {
+gulp.task('upload', ['styles', 'scripts', 'fonts', 'images', 'videos', 'data'], () => {
   let publisher = awspublish.create(s3Config);
+  const gzippable = function(file) {
+    const match = file.path.match(/\.(svg|json|geojson|vtt|html|css|js)$/gi);
+    return match;
+  };
 
-  gulp.src([
-    './de/*.html',
+  let htmlStream = gulp.src([
+    './de/dev/*.html',
   ])
     .pipe(rename((path) => {
         path.dirname = `/malawi/de/${path.dirname}`;
         return path;
     }))
-    .pipe(publisher.publish())
+    .pipe(replace('{{url}}', 'https://cdn.jib-collective.net/malawi/'));
+
+  let distStream = gulp.src([
+    './dist/**/*',
+  ])
+    .pipe(rename((path) => {
+        path.dirname = `/malawi/dist/${path.dirname}`;
+        return path;
+    }))
+    .pipe(gulpIf('*.js', uglify()));
+
+  return merge(htmlStream, distStream)
+    .pipe(gulpIf(gzippable, awspublish.gzip()))
     .pipe(publisher.cache())
+    .pipe(parallelize(publisher.publish(), 10))
     .pipe(awspublish.reporter())
     .pipe(cloudfront(cloudfrontConfig));
-
-    gulp.src([
-      './dist/**/*',
-    ])
-      .pipe(rename((path) => {
-          path.dirname = `/malawi/dist/${path.dirname}`;
-          return path;
-      }))
-      .pipe(publisher.publish())
-      .pipe(publisher.cache())
-      .pipe(awspublish.reporter())
-      .pipe(cloudfront(cloudfrontConfig));
 });
 
 gulp.task('watch', () => {
   gulp.watch('./assets/styles/**/*.scss', ['styles']);
   gulp.watch('./assets/scripts/**/*.js', ['scripts']);
+  gulp.watch('./de/**/*.html', ['html']);
 });
 
 gulp.task('default', [
+  'html',
   'styles',
   'scripts',
   'videos',

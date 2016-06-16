@@ -48,8 +48,7 @@ var gotoSlide = function(slug) {
   }
 };
 
-$(() => {
-  var hammertime = new Hammer($('.app').get(0), {});
+$(function() {
   $steps = $('.step');
 
   $.each($steps, function(index) {
@@ -65,16 +64,6 @@ $(() => {
       var target = $(this).attr('href');
       gotoSlide(target);
     });
-
-  hammertime.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL });
-
-  hammertime.on('swipe', function(e) {
-  	if(e.deltaX < 0) {
-      nextSlide();
-    } else {
-      prevSlide();
-    }
-  });
 
   $('.js-toggle-fullscreen').on('click', function(e) {
     e.preventDefault();

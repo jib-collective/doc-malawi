@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/gustavpursche/doc-malawi#readme",
   "dependencies": {
+    "concurrent-transform": "^1.0.0",
     "gsap": "^1.18.5",
     "gulp": "^3.9.1",
     "gulp-awspublish": "^3.2.0",
@@ -26,11 +27,14 @@
     "gulp-if": "^2.0.1",
     "gulp-imagemin": "^3.0.1",
     "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.1",
     "gulp-svg-sprite": "^1.3.1",
+    "gulp-uglify": "^1.5.3",
     "hammerjs": "^2.0.8",
     "jquery": "^3.0.0",
     "mapbox-gl": "^0.20.0",
+    "merge-stream": "^1.0.0",
     "screenfull": "^3.0.0",
     "video.js": "^5.10.4"
   },
