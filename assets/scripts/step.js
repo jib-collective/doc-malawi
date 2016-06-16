@@ -8,8 +8,16 @@ Step.prototype = {
     this.$el.addClass('step--active');
     this.url = this.$el.data('url');
 
+
+
     if(history) {
-      history.pushState(undefined, undefined, this.url);
+      var url = this.url;
+
+      if(!this.url || this.url === '') {
+        url = './';
+      }
+
+      history.pushState(undefined, undefined, url);
     }
 
     this._initVideos();
