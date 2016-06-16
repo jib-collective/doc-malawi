@@ -69,6 +69,13 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest('./dist/fonts/'));
 });
 
+gulp.task('data', () => {
+  return gulp.src([
+    './assets/data/**/*',
+  ])
+    .pipe(gulp.dest('./dist/data/'));
+});
+
 gulp.task('images', () => {
   const svgSpriteConfig = {
     mode: {
@@ -130,4 +137,5 @@ gulp.task('default', [
   'videos',
   'images',
   'fonts',
+  'data',
 ]);

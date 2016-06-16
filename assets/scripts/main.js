@@ -33,7 +33,7 @@ var prevSlide = function() {
 var gotoSlide = function(slug) {
   var $targetSlide;
 
-  if(slug === '/') {
+  if(!slug) {
     $targetSlide = $steps.eq(0);
   } else {
     $targetSlide = $steps.filter('[data-url="' + slug + '"]');
@@ -99,6 +99,10 @@ $(() => {
 
     $.each($steps, function() {
       var $step = $(this);
+
+      if(!lastUrlPart) {
+        return gotoSlide();
+      }
 
       if($step.data('url') === lastUrlPart) {
         gotoSlide($step.data('url'));

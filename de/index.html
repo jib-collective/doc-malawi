@@ -51,92 +51,88 @@
   <body>
     <main class="app">
       <header class="header">
-        <div class="header__progress js-progress">
-          <ul class="navigation header__navigation js-navigation">
-            <li class="navigation__item">
-              <a href="/"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="chisenga"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="chisenga-hope"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="map-malawi"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="dependency"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="answers"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="opening"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="gondwe"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="economy"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="aspects"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="child-labor"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="bandas-children"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="banda"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="public-private-partnerships"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="nafsn"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="new-alliance"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="ngwira"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="eu"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="makoka-heubuch"
-                 class="navigation__link"></a>
-            </li>
-            <li class="navigation__item">
-              <a href="credits"
-                 class="navigation__link"></a>
-            </li>
-          </ul>
-
-          <div class="header__progress-bar"></div>
-        </div>
+        <ul class="navigation header__navigation js-navigation">
+          <li class="navigation__item">
+            <a href="/"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="chisenga"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="chisenga-hope"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="map-malawi"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="dependency"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="answers"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="opening"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="gondwe"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="economy"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="aspects"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="child-labor"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="bandas-children"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="banda"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="public-private-partnerships"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="nafsn"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="new-alliance"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="ngwira"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="eu"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="makoka-heubuch"
+               class="navigation__link"></a>
+          </li>
+          <li class="navigation__item">
+            <a href="credits"
+               class="navigation__link"></a>
+          </li>
+        </ul>
 
         <button class="header__button js-toggle-fullscreen">
           <svg class="header__button-icon"
@@ -183,10 +179,16 @@
                data-url="chisenga">
         <video class="js-video js-video-play video video--fullscreen"
                preload="auto"
-               data-title="My Title"
-               data-subtitle="Lorem ipsum dolor">
+               data-title="Erisa Chisenga Jere"
+               data-subtitle="Tabakbauer">
           <source src="../dist/videos/malawi_chisenga_1.mp4"
                   type="video/mp4">
+
+          <track kind="captions"
+                 src="../dist/data/sub_malawi_1_chisenga_de.vtt"
+                 srclang="de"
+                 label="deutsch"
+                 default>
         </video>
       </section>
 
@@ -287,6 +289,12 @@
                  data-subtitle="[subtitle add me]">
             <source src="../dist/videos/malawi_gondwe_2.mp4"
                     type="video/mp4">
+
+            <track kind="captions"
+                   src="../dist/data/sub_malawi_2_gondwe_de.vtt"
+                   srclang="de"
+                   label="deutsch"
+                   default>
           </video>
         </div>
       </section>
@@ -372,8 +380,14 @@
               preload="auto"
               data-title="[add me]"
               data-subtitle="[subtitle add me]">
-         <source src="../dist/videos/malawi_banda_3.mp4"
-                 type="video/mp4">
+          <source src="../dist/videos/malawi_banda_3.mp4"
+                  type="video/mp4">
+
+          <track kind="captions"
+                 src="../dist/data/sub_malawi_3_banda_de.vtt"
+                 srclang="de"
+                 label="deutsch"
+                 default>
         </video>
       </section>
 
@@ -440,6 +454,12 @@
               data-subtitle="[subtitle add me]">
          <source src="../dist/videos/malawi_ngwira_4.mp4"
                  type="video/mp4">
+
+         <track kind="captions"
+                src="../dist/data/sub_malawi_4_ngwira_de.vtt"
+                srclang="de"
+                label="deutsch"
+                default>
         </video>
       </section>
 
@@ -476,6 +496,12 @@
               data-subtitle="[subtitle add me]">
          <source src="../dist/videos/malawi_makoka-heubuch_5.mp4"
                  type="video/mp4">
+
+         <track kind="captions"
+                src="../dist/data/sub_malawi_5_makoka_heubuch_de.vtt"
+                srclang="de"
+                label="deutsch"
+                default>
         </video>
       </section>
 

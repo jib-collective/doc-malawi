@@ -6,10 +6,10 @@ var Step = function($el, options) {
 Step.prototype = {
   init: function() {
     this.$el.addClass('step--active');
+    this.url = this.$el.data('url');
 
     if(history) {
-      var url = this.$el.data('url');
-      history.pushState(undefined, undefined, url);
+      history.pushState(undefined, undefined, this.url);
     }
 
     this._initVideos();
@@ -69,8 +69,25 @@ Step.prototype = {
         zoom: 2,
       });
 
+      var geojsonOptions = {
+        data: '../dist/data/malawi_border.webjson',
+      };
+      var border = new mapboxgl.GeoJSONSource(geojsonOptions);
+
       self.map.on('load', function() {
         setTimeout(function() {
+          // add border layer
+          self.map.addSource('border', border);
+
+          self.map.addLayer({
+            'id': 'border',
+            'type': 'fill',
+            'source': 'border',
+            'paint': {
+              'fill-color': 'rgba(255, 255, 255, .2)',
+            }
+          });
+
           self.map.easeTo({
             center: [
               33.901221,
@@ -85,16 +102,11 @@ Step.prototype = {
 
   _updateProgress: function() {
     var index = this.$el.index();
-    var stepsLength = this.options.$steps.length;
-    var $progress = $('.header__progress-bar');
+    var $progressSteps = $('.navigation__link');
+    var $progressStep = $progressSteps.filter('[href="' + this.url + '"]');
 
-    if(index === 0) {
-      index = 1;
-    } else {
-      index = index - 1;
-    }
-
-    $progress.css('width', 'calc(' + ((index / stepsLength) * 100) + '% + .5rem)');
+    $progressSteps.filter('.navigation__link--active').removeClass('navigation__link--active');
+    $progressStep.addClass('navigation__link--active');
   },
 
   destroy: function(cb) {
