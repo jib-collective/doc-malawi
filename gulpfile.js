@@ -7,6 +7,7 @@ const parallelize = require('concurrent-transform');
 const cssnano = require('gulp-cssnano');
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
+const htmlmin = require('gulp-htmlmin');
 const imagemin = require('gulp-imagemin');
 const awspublish = require('gulp-awspublish');
 const merge = require('merge-stream');
@@ -68,6 +69,7 @@ gulp.task('html', () => {
     './de/dev/**/*.html',
   ])
     .pipe(replace('{{url}}', '../'))
+    .pipe(replace('{{version}}', ''))
     .pipe(gulp.dest('./de/'));
 });
 
@@ -116,6 +118,10 @@ gulp.task('images', () => {
 
 gulp.task('upload', ['styles', 'scripts', 'fonts', 'images', 'videos', 'data'], () => {
   let publisher = awspublish.create(s3Config);
+  const cacheTime = (60 * 60 * 24) * 14; // 14 days
+  const awsHeaders = {
+    'Cache-Control': `public, max-age=${cacheTime}, s-maxage=${cacheTime}`,
+  };
   const gzippable = function(file) {
     const match = file.path.match(/\.(svg|json|geojson|vtt|html|css|js)$/gi);
     return match;
@@ -128,7 +134,9 @@ gulp.task('upload', ['styles', 'scripts', 'fonts', 'images', 'videos', 'data'], 
         path.dirname = `/malawi/de/${path.dirname}`;
         return path;
     }))
-    .pipe(replace('{{url}}', 'https://cdn.jib-collective.net/malawi/'));
+    .pipe(replace('{{url}}', 'https://cdn.jib-collective.net/malawi/'))
+    .pipe(replace('{{version}}', '?v=' + require('./package.json').version))
+    .pipe(htmlmin());
 
   let distStream = gulp.src([
     './dist/**/*',
@@ -142,7 +150,7 @@ gulp.task('upload', ['styles', 'scripts', 'fonts', 'images', 'videos', 'data'], 
   return merge(htmlStream, distStream)
     .pipe(gulpIf(gzippable, awspublish.gzip()))
     .pipe(publisher.cache())
-    .pipe(parallelize(publisher.publish(), 10))
+    .pipe(parallelize(publisher.publish(awsHeaders), 10))
     .pipe(awspublish.reporter())
     .pipe(cloudfront(cloudfrontConfig));
 });

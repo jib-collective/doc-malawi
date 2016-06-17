@@ -113,6 +113,12 @@ Application.prototype = {
     $('.js-step-goto')
       .on('click', function(e) {
         e.preventDefault();
+        var $target = $(this);
+
+        if($target.is('svg') || $target.is('use')) {
+          $target = $target.closest('a');
+        }
+
         self.gotoSlide($(this).attr('href'));
       });
 
