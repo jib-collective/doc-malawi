@@ -36,6 +36,7 @@
     "mapbox-gl": "^0.20.0",
     "merge-stream": "^1.0.0",
     "screenfull": "^3.0.0",
+    "tocca": "^1.0.1",
     "video.js": "^5.10.4"
   },
   "devDependencies": {

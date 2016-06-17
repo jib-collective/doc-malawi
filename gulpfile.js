@@ -47,6 +47,7 @@ gulp.task('scripts', () => {
     './node_modules/jquery/dist/jquery.js',
     './node_modules/screenfull/dist/screenfull.js',
     './node_modules/video.js/dist/video.js',
+    './node_modules/tocca/Tocca.js',
     './node_modules/gsap/src/uncompressed/TweenLite.js',
     './node_modules/gsap/src/uncompressed/TimelineLite.js',
     './node_modules/gsap/src/uncompressed/plugins/CSSPlugin.js',
