@@ -85,8 +85,9 @@
     font-size: .8rem;
     font-weight: $font-weight-sans-serif;
     outline: none;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 1.2rem;
+    padding-right: 1rem;
+    padding-top: .3rem;
     text-transform: uppercase;
     vertical-align: middle;
 
@@ -98,6 +99,12 @@
     &:active {
       background: darken($color-attention, 20%);
     }
+  }
+
+  &-play-control-icon {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
   }
 
   &-video-title {
