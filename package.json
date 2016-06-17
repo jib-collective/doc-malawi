@@ -19,6 +19,7 @@
   "dependencies": {
     "concurrent-transform": "^1.0.0",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
     "gulp-awspublish": "^3.2.0",
     "gulp-cloudfront-invalidate": "^0.1.2",
     "gulp-concat": "^2.6.0",

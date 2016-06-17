@@ -1,5 +1,6 @@
 'use strict';
 
+const autoprefixer = require('gulp-autoprefixer');
 const cloudfront = require('gulp-cloudfront-invalidate');
 const concat = require('gulp-concat');
 const parallelize = require('concurrent-transform');
@@ -35,8 +36,13 @@ gulp.task('styles', () => {
   ])
     .pipe(gulpIf('*.scss', sass().on('error', sass.logError)))
     .pipe(concat('main.css'))
+    .pipe(autoprefixer({
+      browsers: [
+        'last 2 versions',
+        'iOS 7',
+      ]
+    }))
     .pipe(cssnano({
-      autoprefixer: true,
       zindex: false,
     }))
     .pipe(gulp.dest('./dist/styles/'));
