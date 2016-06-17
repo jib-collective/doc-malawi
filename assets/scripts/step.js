@@ -27,6 +27,10 @@ Step.prototype = {
     var self = this;
     var $videos = this.$el.find('.js-video');
 
+    if(this.video) {
+      return this.video.load();
+    }
+
     $.each($videos, function() {
       var $video = $(this);
       var $track = $video.children('track');
@@ -109,6 +113,19 @@ Step.prototype = {
     });
   },
 
+  _destroyMaps: function() {
+    if(this.map) {
+      this.map.remove();
+      this.map = undefined;
+    }
+  },
+
+  _destroyVideos: function() {
+    if(this.video) {
+      this.video.pause();
+    }
+  },
+
   _updateProgress: function() {
     var index = this.$el.index();
     var $progressSteps = $('.navigation__link');
@@ -123,10 +140,8 @@ Step.prototype = {
     var timeline = new TimelineLite({
       onComplete: function() {
         self.$el.removeClass('step--active');
-
-        if(self.video) {
-          self.video.pause();
-        }
+        self._destroyMaps();
+        self._destroyVideos();
 
         if(typeof(cb) === 'function') {
           cb();
@@ -135,7 +150,7 @@ Step.prototype = {
     });
 
     timeline.add(
-      TweenLite.to(self.$el.get(0), 1.5, {
+      TweenLite.to(self.$el.get(0), 1, {
         ease: Power1.easeOut,
         delay: 0.1,
         opacity: 0,

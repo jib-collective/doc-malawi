@@ -34,26 +34,18 @@
                 height .2s ease-in,
                 top .2s ease-in;
     width: .5rem;
-    will-change: width height top;
+    z-index: 20;
 
     &--active {
+      background-color: rgb(255, 255, 255);
       top: -.25rem;
       height: 1rem;
       width: 1rem;
-      z-index: 20;
     }
 
     &:hover,
     &:focus {
-      background-color: rgb(255, 255, 255);
-      cursor: pointer;
-      top: -.1rem;
-      height: .7rem;
-      width: .7rem;
-    }
-
-    &:active {
-      background-color: darken(white, 5%);
+      background-color: $color-attention;
     }
   }
 }

@@ -4,30 +4,20 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VzdGF2cHVyc2NoZSIsImEiOiJhVVRUaFV3In0.IdUOb
 
 var nextSlide = function() {
   var $currentSlide = $steps.filter('.step--active');
-  var currentSlideId = $currentSlide.index();
-  var $nextSlide = $steps.eq(currentSlideId + 1);
+  var $nextSlide = $currentSlide.next('.step');
 
-  if(currentSlideId + 1 > $steps.length) {
-    return;
+  if($nextSlide.length) {
+    gotoSlide($nextSlide.data('url'));
   }
-
-  $currentSlide.data('step').destroy(function() {
-    $nextSlide.data('step').init();
-  });
 };
 
 var prevSlide = function() {
   var $currentSlide = $steps.filter('.step--active');
-  var currentSlideId = $currentSlide.index();
-  var $nextSlide = $steps.eq(currentSlideId - 1);
+  var $nextSlide = $currentSlide.prev('.step');
 
-  if(currentSlideId - 1 < 0) {
-    return;
+  if($nextSlide.length) {
+    gotoSlide($nextSlide.data('url'));
   }
-
-  $currentSlide.data('step').destroy(function() {
-    $nextSlide.data('step').init();
-  });
 };
 
 var gotoSlide = function(slug) {
@@ -48,6 +38,21 @@ var gotoSlide = function(slug) {
   }
 };
 
+var enableFullscreenButton = function() {
+  /* Fullscreen API not available */
+  if(!screenfull.enabled) {
+    $('.header__button').addClass('header__button--is-hidden');
+  } else {
+    $('.js-toggle-fullscreen').on('click', function(e) {
+      e.preventDefault();
+
+      if (screenfull.enabled) {
+        screenfull.request();
+      }
+    });
+  }
+};
+
 $(function() {
   $steps = $('.step');
 
@@ -65,13 +70,7 @@ $(function() {
       gotoSlide(target);
     });
 
-  $('.js-toggle-fullscreen').on('click', function(e) {
-    e.preventDefault();
-
-    if (screenfull.enabled) {
-        screenfull.request();
-    }
-  });
+  enableFullscreenButton();
 
   $('.js-step-goto').on('click', function(e) {
     e.preventDefault();
