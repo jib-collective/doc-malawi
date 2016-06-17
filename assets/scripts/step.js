@@ -58,18 +58,18 @@ Step.prototype = {
                               .addClass('vjs-play-control-icon')
                               .append(
                                 $('<use/>')
-                                  .attr('xlink:href', '../dist/images/sprite.svg#play')
+                                  .attr('xlink:href', '../dist/images/sprite.svg#pause')
                               )
                             );
 
           $playControl.html($playIcon.html());
 
           self.video.on('play', function() {
-            changePlayIcon($playControl, 'play');
+            changePlayIcon($playControl, 'pause');
           });
 
           self.video.on('pause', function() {
-            changePlayIcon($playControl, 'pause');
+            changePlayIcon($playControl, 'play');
           });
 
           if(title || subtitle) {
@@ -170,27 +170,12 @@ Step.prototype = {
   },
 
   destroy: function(cb) {
-    var self = this;
-    var timeline = new TimelineLite({
-      onComplete: function() {
-        self.$el.removeClass('step--active');
-        self._destroyMaps();
-        self._destroyVideos();
+    this.$el.removeClass('step--active');
+    this._destroyMaps();
+    this._destroyVideos();
 
-        if(typeof(cb) === 'function') {
-          cb();
-        }
-      },
-    });
-
-    timeline.add(
-      TweenLite.to(self.$el.get(0), 0.2, {
-        ease: Power1.easeOut,
-        delay: 0.1,
-        opacity: 0,
-      })
-    );
-
-    timeline.play();
+    if(typeof(cb) === 'function') {
+      cb();
+    }
   },
 };

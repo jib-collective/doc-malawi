@@ -1,8 +1,8 @@
 var Application = function($steps) {
   this.$steps = $steps;
 
-  this.initBindings();
   this.initSteps();
+  this.initBindings();
   this.enableFullscreenButton();
   this.enableHistorySupport();
 };
@@ -12,18 +12,14 @@ Application.prototype = {
     var $currentSlide = this.$steps.filter('.step--active');
     var $nextSlide = $currentSlide.next('.step');
 
-    if($nextSlide.length) {
-      this.gotoSlide($nextSlide.data('url'));
-    }
+    this.gotoSlide($nextSlide.data('url') || undefined);
   },
 
   prevSlide: function() {
     var $currentSlide = this.$steps.filter('.step--active');
     var $nextSlide = $currentSlide.prev('.step');
 
-    if($nextSlide.length) {
-      this.gotoSlide($nextSlide.data('url'));
-    }
+    this.gotoSlide($nextSlide.data('url') || undefined);
   },
 
   gotoSlide: function(slug) {
@@ -32,16 +28,13 @@ Application.prototype = {
 
     if(!slug) {
       $targetSlide = this.$steps.eq(0);
-      return $targetSlide.data('step').init();
     } else {
       $targetSlide = this.$steps.filter('[data-url="' + slug + '"]');
-
-      if($targetSlide.length) {
-        $currentSlide.data('step').destroy(function() {
-          $targetSlide.data('step').init();
-        });
-      }
     }
+
+    $currentSlide.data('step').destroy(function() {
+      $targetSlide.data('step').init();
+    });
   },
 
   enableFullscreenButton: function() {
@@ -72,17 +65,17 @@ Application.prototype = {
     var lastUrlPart = urlParts[urlParts.length - 1];
 
     if(!lastUrlPart) {
-      this.gotoSlide();
-    } else {
-      $.each(this.$steps, function() {
-        var $step = $(this);
-
-        if($step.data('url') === lastUrlPart) {
-          self.gotoSlide($step.data('url'));
-          return false;
-        }
-      });
+      return;
     }
+
+    $.each(this.$steps, function() {
+      var $step = $(this);
+
+      if($step.data('url') === lastUrlPart) {
+        self.gotoSlide($step.data('url'));
+        return false;
+      }
+    });
   },
 
   initSteps: function() {
@@ -92,7 +85,7 @@ Application.prototype = {
       var $this = $(this);
 
       $this.data('step', new Step($this, {'$steps': self.$steps}));
-      $this.css('z-index', self.$steps.length - index);
+      //$this.css('z-index', self.$steps.length - index);
     });
   },
 
