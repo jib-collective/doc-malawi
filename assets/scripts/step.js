@@ -20,7 +20,7 @@ Step.prototype = {
 
     this._initVideos();
     this._initMaps();
-    this._updateProgress();
+    this._updateNavigation();
   },
 
   _initVideos: function() {
@@ -127,13 +127,18 @@ Step.prototype = {
     }
   },
 
-  _updateProgress: function() {
+  _updateNavigation: function() {
     var index = this.$el.index();
-    var $progressSteps = $('.navigation__link');
-    var $progressStep = $progressSteps.filter('[href="' + this.url + '"]');
+    var hiddenClass = 'app-navigation--is-hidden';
+    var prevHiddenClass = 'app-navigation--prev-is-hidden';
+    var nextHiddenClass = 'app-navigation--next-is-hidden';
+    var $navigation = $('.app-navigation');
 
-    $progressSteps.filter('.navigation__link--active').removeClass('navigation__link--active');
-    $progressStep.addClass('navigation__link--active');
+    var isFirstSlide = index === 0;
+    var isLastSlide = (index + 1) === this.options.$steps.length;
+
+    $navigation.toggleClass(hiddenClass, isFirstSlide);
+    $navigation.toggleClass(nextHiddenClass, isLastSlide);
   },
 
   destroy: function(cb) {

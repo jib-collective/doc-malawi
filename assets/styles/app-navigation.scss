@@ -1,0 +1,45 @@
+.app-navigation {
+  &__button {
+    background-color: $color-attention;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .4);
+    line-height: 1;
+    padding: .5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 200;
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: darken($color-attention, 10%);
+    }
+
+    > svg {
+      height: 2rem;
+      line-height: 1;
+      width: 1.2rem;
+    }
+
+    &--prev {
+      left: 0;
+      transition: left .4s ease-in;
+    }
+
+    &--next {
+      right: 0;
+      transition: right .4s ease-in;
+    }
+  }
+
+  &--is-hidden &__button--next,
+  &--next-is-hidden &__button--next {
+    right: -100%;
+  }
+
+  &--is-hidden &__button--prev,
+  &--prev-is-hidden &__button--prev {
+    left: -100%;
+  }
+}

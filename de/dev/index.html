@@ -59,430 +59,448 @@
         </button>
       </header>
 
-      <section class="step step--active"
-               style="background-image: url({{url}}dist/images/malawi_1.jpg);"
-               data-url="">
-        <article class="step__canvas">
-          <h1 class="step__headline">Voll abhängig</h1>
-          <p class="step__teaser">
-            Der Tabak beschert Malawi wichtige Einnahmen, aber durch ihn fehlen
-            Flächen für den Anbau von Nahrungsmitteln. Die Regierung will weg
-            vom Tabak. Doch die Tabakindustrie steht im Weg – und ausgerechnet
-            ein milliardenschweres Entwicklungsprogramm.
-          </p>
+      <nav class="app-navigation app-navigation--is-hidden">
+        <button class="app-navigation__button app-navigation__button--prev js-goto-next">
+          <svg class="header__button-icon">
+            <title>Vorheriger Slide</title>
+            <use xlink:href="../dist/images/sprite.svg#arrow-left"></use>
+          </svg>
+        </button>
 
-          <a href="chisenga"
-             class="button button--intro js-step-goto">
-            <svg class="button__icon"
-                 width="1792"
-                 height="1792"
-                 viewBox="0 0 1792 1792"
-                 xmlns="http://www.w3.org/2000/svg">
-              <path d="M1576 927l-1328 738q-23 13-39.5 3t-16.5-36v-1472q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z" fill="#fff"/>
-            </svg>
-            <span class="button__label">
-              Anschauen
-              <small class="button__subtext">Lesezeit ca. 15min</small>
-            </span>
-          </a>
-        </article>
-      </section>
+        <button class="app-navigation__button app-navigation__button--next js-goto-next">
+          <svg class="header__button-icon">
+            <title>Nächster Slide</title>
+            <use xlink:href="../dist/images/sprite.svg#arrow-right"></use>
+          </svg>
+        </button>
+      </nav>
 
-      <section class="step"
-               data-url="chisenga">
-        <video class="js-video js-video-play video video--fullscreen"
-               preload="none"
-               data-title="Erisa Chisenga Jere"
-               data-subtitle="Tabakbauer">
-          <source src="{{url}}dist/videos/malawi_chisenga_1.mp4"
-                  type="video/mp4">
+      <div>
+        <section class="step step--active"
+                 style="background-image: url({{url}}dist/images/malawi_1.jpg);"
+                 data-url="">
+          <article class="step__canvas">
+            <h1 class="step__headline">Voll abhängig</h1>
+            <p class="step__teaser">
+              Der Tabak beschert Malawi wichtige Einnahmen, aber durch ihn fehlen
+              Flächen für den Anbau von Nahrungsmitteln. Die Regierung will weg
+              vom Tabak. Doch die Tabakindustrie steht im Weg – und ausgerechnet
+              ein milliardenschweres Entwicklungsprogramm.
+            </p>
 
-          <track kind="captions"
-                 data-src="../dist/data/sub_malawi_1_chisenga_de.vtt"
-                 srclang="de"
-                 label="deutsch"
-                 default>
-        </video>
-      </section>
+            <a href="chisenga"
+               class="button button--intro js-step-goto">
+              <svg class="button__icon"
+                   width="1792"
+                   height="1792"
+                   viewBox="0 0 1792 1792"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M1576 927l-1328 738q-23 13-39.5 3t-16.5-36v-1472q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z" fill="#fff"/>
+              </svg>
+              <span class="button__label">
+                Anschauen
+                <small class="button__subtext">Lesezeit ca. 15min</small>
+              </span>
+            </a>
+          </article>
+        </section>
 
-      <section class="step"
-               data-url="chisenga-hope">
-        <article class="step__canvas">
-          <p class="step__teaser">
-            Jeden Tag streift Erisa Chisenga durch sein Feld von 100 mal 100
-            Metern. Sein Hektar Hoffnung, der eine bessere Zukunft für seine Frau
-            und die fünf Kinder bringen sollte. Eine Hoffnung, die er mit fast
-            400.000 Tabakbauern in Malawi teilt.
-          </p>
-        </article>
-      </section>
-
-      <section class="step"
-               data-url="malawi-keyfacts">
-        <div class="map js-map"></div>
-
-        <div class="map-slide">
-          <ul class="map-slide__slide"
-              data-title="Keyfacts">
-            <li class="map-slide__fact">
-              <p>
-                Bevölkerung: 17.2 Millionen
-              </p>
-            </li>
-            <li class="map-slide__fact">
-              <p>
-                “50% der Bevölkerung leben von weniger als 1$ am Tag”
-              </p>
-            </li>
-            <li class="map-slide__fact">
-              <p>
-                “Jedes zweite Kind ist chronisch mangelernährt”
-              </p>
-            </li>
-          </ul>
-
-          <ul class="map-slide__slide"
-              data-title="Burley Tabak">
-            <li class="map-slide__fact">
-              <p>
-                Weltmarktführer im Export von Burley-Tabak
-              </p>
-            </li>
-            <li class="map-slide__fact">
-              <p>
-                mehr als 50% der Exporteeinnahmen aus Tabak
-              </p>
-            </li>
-            <li class="map-slide__fact">
-              <p>
-                zwei Drittel der Deviseneinnahmen des Landes
-              </p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="step"
-               data-url="dependency">
-        <div class="step__canvas">
-          <p class="step__teaser">
-            Ohne Devisen, keine Importe. Anders ausgedrückt: Malawi ist abhängig
-            vom Tabak. Doch Rauchen wird zunehmend uncool. Immer mehr Menschen
-            verzichten aus Rücksicht auf ihre Gesundheit darauf, hohe Steuern
-            erschweren den Zigarettenfirmen das Leben. Was, wenn die
-            Nachfrage sinkt?
-          </p>
-
-          <p class="step__teaser">
-            Auf der Suche nach Antworten reisen wir durch ein kleines Land, das
-            mitten in einem großen Dilemma steckt: Wie raus aus der Abhängigkeit
-            vom Tabak, der bislang die wichtigste Einnahmequelle ist?
-          </p>
-        </div>
-      </section>
-
-      <section class="step"
-               data-url="gondwe">
-        <div class="step__canvas">
+        <section class="step"
+                 data-url="chisenga">
           <video class="js-video js-video-play video video--fullscreen"
                  preload="none"
-                 data-title="[add me]"
-                 data-subtitle="[subtitle add me]">
-            <source src="{{url}}dist/videos/malawi_gondwe_2.mp4"
+                 data-title="Erisa Chisenga Jere"
+                 data-subtitle="Tabakbauer">
+            <source src="{{url}}dist/videos/malawi_chisenga_1.mp4"
                     type="video/mp4">
 
             <track kind="captions"
-                   data-src="../dist/data/sub_malawi_2_gondwe_de.vtt"
+                   data-src="../dist/data/sub_malawi_1_chisenga_de.vtt"
                    srclang="de"
                    label="deutsch"
                    default>
           </video>
-        </div>
-      </section>
+        </section>
 
-      <section class="step"
-               data-url="diversity">
-        <div class="step__canvas">
-          <p class="step__teaser">
-            Malawi müsse seine Wirtschaft diversifizieren, also auch andere
-            Produkte verkaufen. Doch nicht nur aus wirtschaftlicher Sicht ist
-            Malawis Abhängigkeit vom Tabak problematisch. Die Arbeit mit dem
-            Tabak gefährdet auch die Gesundheit der Bauern.
-          </p>
-        </div>
-      </section>
+        <section class="step"
+                 data-url="chisenga-hope">
+          <article class="step__canvas">
+            <p class="step__teaser">
+              Jeden Tag streift Erisa Chisenga durch sein Feld von 100 mal 100
+              Metern. Sein Hektar Hoffnung, der eine bessere Zukunft für seine Frau
+              und die fünf Kinder bringen sollte. Eine Hoffnung, die er mit fast
+              400.000 Tabakbauern in Malawi teilt.
+            </p>
+          </article>
+        </section>
 
-      <section class="step"
-               data-url="map-tabacco">
-        <div class="map js-map"></div>
+        <section class="step"
+                 data-url="malawi-keyfacts">
+          <div class="map js-map"></div>
 
-        <div class="map-slide">
-          <ul class="map-slide__slide"
-              data-title="Folgen für die Bauern">
-            <li class="map-slide__fact">
-              <p>
-                Viele Tabakbauern arbeiten ohne Schutzkleidung
-              </p>
-            </li>
-
-            <li class="map-slide__fact">
-              <p>
-                An einem Erntetag nehmen sie soviel Nikotin auf, wie in
-                50 Zigaretten enthalten ist.
-              </p>
-            </li>
-
-            <li class="map-slide__fact">
-              <p>
-                Die Folge: “Green Tobacco Disease” –  Kopfschmerzen,
-                Schwindelanfälle, Herzrasen, Erbrechen, Durchfall.
-              </p>
-            </li>
-          </ul>
-
-          <ul class="map-slide__slide"
-              data-title="Kinderarbeit">
-            <li class="map-slide__fact">
-              <p>
-                “Malawi gilt als Land mit der höchsten Rate an Kinderarbeit
-                in ganz Afrika”
-              </p>
-            </li>
-
-            <li class="map-slide__fact">
-              <p>
-                “Allein auf Malawis Tabakfeldern schuften 78.000 Kinder”
-              </p>
-            </li>
-
-            <li class="map-slide__fact">
-              <p>
-                Sie sind den Gesundheitsgefahren der Tabakpflanze am
-                wehrlosesten ausgeliefert
-              </p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="step"
-               data-url="banda-intro">
-        <div class="step__canvas">
-          <p class="step__teaser">
-            Kinderarbeit? Manch ein Großverdiener im Tabakgeschäft wehrt sich
-            gegen diesen Vorwurf. Wir haben einen von ihnen besucht. Willkommen
-            auf dem Anwesen von Alfred Kapichira Banda.
-          </p>
-        </div>
-      </section>
-
-      <section class="step"
-               data-url="banda">
-        <video class="js-video js-video-play video video--fullscreen"
-              preload="none"
-              data-title="[add me]"
-              data-subtitle="[subtitle add me]">
-          <source src="{{url}}dist/videos/malawi_banda_3.mp4"
-                  type="video/mp4">
-
-          <track kind="captions"
-                 data-src="../dist/data/sub_malawi_3_banda_de.vtt"
-                 srclang="de"
-                 label="deutsch"
-                 default>
-        </video>
-      </section>
-
-      <section class="step"
-               data-url="nafsn">
-        <div class="step__canvas">
-          <p class="step__teaser">
-            Während Malawis Regierung weg will vom Tabak, halten andere daran
-            fest. Ausgerechnet ein großes Entwicklungsprogramm behindert
-            Malawis Exitstrategie aus dem Tabak: Die “New Alliance for Food
-            Security and Nutrition” (NAFSN).
-          </p>
-        </div>
-      </section>
-
-      <section class="step"
-               data-url="map-nafsn">
-        <div class="map js-map"></div>
-
-        <div class="map-slide">
-          <ul class="map-slide__slide">
-            <li class="map-slide__fact">
-              <p>
-                Gegründet von den G8-Staaten (Deutschland, Frankreich, Italien,
-                Japan, Kanada, England, USA, Russland)
-              </p>
-            </li>
-
-            <li class="map-slide__fact">
-              <p>
-                Ziel: Binnen 10 Jahren 50 Millionen Menschen aus “absoluter
-                Armut” befreien
-              </p>
-            </li>
-
-            <li class="map-slide__fact">
-              <p>
-                Durch Public Private Partnerships (PPP) – gemeinsame
-                Investitionen von Staat und Wirtschaft.
-              </p>
-            </li>
-          </ul>
-
-          <ul class="map-slide__slide">
-            <li class="map-slide__fact">
-              <p>
-                Zielstaaten: Äthiopien, Benin, Burkina Faso, Elfenbeinküste,
-                Ghana, Malawi, Mosambik, Nigeria, Senegal, Tansania
-              </p>
-            </li>
-
-            <li class="map-slide__fact">
-              <p>
-                Private Partner: Nestlé, Coca-Cola, Heineken, Bayer, Syngenta,
-                Monsanto
-              </p>
-            </li>
-
-            <li class="map-slide__fact">
-              <p>
-                Sollen bis 2022 über 10 Milliarden $ in die Landwirtschaft
-                investieren
-              </p>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="step"
-               data-url="alliance-one">
-        <div class="step__canvas">
-          <p class="step__teaser">
-            In Malawi beteiligen sich an der NAFSN auch die Tabakkonzerne
-            Alliance One und Limbe Leaf. Gemeinsam kaufen die beiden Giganten
-            jedes Jahr den Großteil der Tabakernte in Malawi.
-          </p>
-
-          <p class="step__teaser">
-            Mithilfe der NAFSN will Alliance One eigene Tabakforschungsinstitute
-            gründen und in großem Stil neues Land erwerben.  Derzeit besitzt das
-            Unternehmen 61.000 Hektar Land, 121.000 Hektar sollen es werden.
-            Aber ist Malawi nicht jetzt schon zu abhängig vom Tabak? Wir haben
-            bei Alliance One nachgefragt.
-          </p>
-        </div>
-      </section>
-
-      <section class="step"
-               data-url="ngwira">
-        <video class="js-video js-video-play video video--fullscreen"
-              preload="none"
-              data-title="[add me]"
-              data-subtitle="[subtitle add me]">
-         <source src="{{url}}dist/videos/malawi_ngwira_4.mp4"
-                 type="video/mp4">
-
-         <track kind="captions"
-                data-src="../dist/data/sub_malawi_4_ngwira_de.vtt"
-                srclang="de"
-                label="deutsch"
-                default>
-        </video>
-      </section>
-
-      <section class="step"
-               data-url="eu">
-        <div class="step__canvas">
-          <p class="step__teaser">
-            Mit der Tabakindustrie gegen Hunger? Rauchen für Malawi? Für die
-            Umsetzung der New Alliance in Malawi ist die Europäische Union
-            zuständig. Die Grünen-Abgeordnete Maria Heubuch erstattet dem
-            Ausschuss des EU-Parlaments für Entwicklung Bericht. Heubuch
-            empfiehlt der EU, aus der New Alliance auszusteigen.
-          </p>
-
-          <p class="step__teaser">
-            Auch der Entwicklungsökonom Donald Makoka sieht die NAFSN kritisch.
-            Makoka gilt als einer der ausgewiesensten Kenner des malawischen
-            Tabaksektors. Im Interview erklären Heubuch und Makoka, vor welchen
-            Problemen Malawi steht und welche Rolle Tabakindustrie und New
-            Alliance dabei spielen.
-          </p>
-        </div>
-      </section>
-
-      <section class="step"
-               data-url="makoka-heubuch">
-        <video class="js-video js-video-play video video--fullscreen"
-              preload="none"
-              data-title="[add me]"
-              data-subtitle="[subtitle add me]">
-         <source src="{{url}}dist/videos/malawi_makoka-heubuch_5.mp4"
-                 type="video/mp4">
-
-         <track kind="captions"
-                data-src="../dist/data/sub_malawi_5_makoka_heubuch_de.vtt"
-                srclang="de"
-                label="deutsch"
-                default>
-        </video>
-      </section>
-
-      <section class="step"
-               data-url="credits">
-        <div class="step__canvas">
-          <div class="outro">
-            <strong class="outro__title">Voll abhängig</strong>
-            <small class="outro__subtitle">Malawis Tabakproblem</small>
-
-            <dl class="outro__credits">
-              <dt>Story</dt>
-              <dd>Chris Grodotzki &amp; Marius Münstermann</dd>
-
-              <dt>Malawi Support</dt>
-              <dd>Collins Mtika &amp; Alfred Chauwa</dd>
-
-              <dt>Programmierung</dt>
-              <dd>Gustav Pursche</dd>
-            </dl>
-
-            <ul class="outro__logos">
-              <li>
-                <a href="https://jib-collective.net/"
-                   target="_blank"
-                   class="outro__logo outro__logo--white">
-                  <svg>
-                    <title>Logo jib</title>
-                    <use xlink:href="../dist/images/sprite.svg#jib-logo"></use>
-                  </svg>
-                </a>
+          <div class="map-slide">
+            <ul class="map-slide__slide"
+                data-title="Keyfacts">
+              <li class="map-slide__fact">
+                <p>
+                  Bevölkerung: 17.2 Millionen
+                </p>
               </li>
-              <li>
-                <a href="http://www.fluter.de/"
-                   target="_blank"
-                   class="outro__logo outro__logo--white">
-                  <img src="../dist/images/fluter-logo.jpg"
-                       alt="Logo Fluter" />
-                </a>
+              <li class="map-slide__fact">
+                <p>
+                  “50% der Bevölkerung leben von weniger als 1$ am Tag”
+                </p>
               </li>
-              <li>
-                <a href="https://correctiv.org/"
-                   target="_blank"
-                   class="outro__logo outro__logo--white">
-                   <svg>
-                     <title>Logo Correctiv</title>
-                     <use xlink:href="../dist/images/sprite.svg#correctiv-logo"></use>
-                   </svg>
-                </a>
+              <li class="map-slide__fact">
+                <p>
+                  “Jedes zweite Kind ist chronisch mangelernährt”
+                </p>
+              </li>
+            </ul>
+
+            <ul class="map-slide__slide"
+                data-title="Burley Tabak">
+              <li class="map-slide__fact">
+                <p>
+                  Weltmarktführer im Export von Burley-Tabak
+                </p>
+              </li>
+              <li class="map-slide__fact">
+                <p>
+                  mehr als 50% der Exporteeinnahmen aus Tabak
+                </p>
+              </li>
+              <li class="map-slide__fact">
+                <p>
+                  zwei Drittel der Deviseneinnahmen des Landes
+                </p>
               </li>
             </ul>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section class="step"
+                 data-url="dependency">
+          <div class="step__canvas">
+            <p class="step__teaser">
+              Ohne Devisen, keine Importe. Anders ausgedrückt: Malawi ist abhängig
+              vom Tabak. Doch Rauchen wird zunehmend uncool. Immer mehr Menschen
+              verzichten aus Rücksicht auf ihre Gesundheit darauf, hohe Steuern
+              erschweren den Zigarettenfirmen das Leben. Was, wenn die
+              Nachfrage sinkt?
+            </p>
+
+            <p class="step__teaser">
+              Auf der Suche nach Antworten reisen wir durch ein kleines Land, das
+              mitten in einem großen Dilemma steckt: Wie raus aus der Abhängigkeit
+              vom Tabak, der bislang die wichtigste Einnahmequelle ist?
+            </p>
+          </div>
+        </section>
+
+        <section class="step"
+                 data-url="gondwe">
+          <div class="step__canvas">
+            <video class="js-video js-video-play video video--fullscreen"
+                   preload="none"
+                   data-title="[add me]"
+                   data-subtitle="[subtitle add me]">
+              <source src="{{url}}dist/videos/malawi_gondwe_2.mp4"
+                      type="video/mp4">
+
+              <track kind="captions"
+                     data-src="../dist/data/sub_malawi_2_gondwe_de.vtt"
+                     srclang="de"
+                     label="deutsch"
+                     default>
+            </video>
+          </div>
+        </section>
+
+        <section class="step"
+                 data-url="diversity">
+          <div class="step__canvas">
+            <p class="step__teaser">
+              Malawi müsse seine Wirtschaft diversifizieren, also auch andere
+              Produkte verkaufen. Doch nicht nur aus wirtschaftlicher Sicht ist
+              Malawis Abhängigkeit vom Tabak problematisch. Die Arbeit mit dem
+              Tabak gefährdet auch die Gesundheit der Bauern.
+            </p>
+          </div>
+        </section>
+
+        <section class="step"
+                 data-url="map-tabacco">
+          <div class="map js-map"></div>
+
+          <div class="map-slide">
+            <ul class="map-slide__slide"
+                data-title="Folgen für die Bauern">
+              <li class="map-slide__fact">
+                <p>
+                  Viele Tabakbauern arbeiten ohne Schutzkleidung
+                </p>
+              </li>
+
+              <li class="map-slide__fact">
+                <p>
+                  An einem Erntetag nehmen sie soviel Nikotin auf, wie in
+                  50 Zigaretten enthalten ist.
+                </p>
+              </li>
+
+              <li class="map-slide__fact">
+                <p>
+                  Die Folge: “Green Tobacco Disease” –  Kopfschmerzen,
+                  Schwindelanfälle, Herzrasen, Erbrechen, Durchfall.
+                </p>
+              </li>
+            </ul>
+
+            <ul class="map-slide__slide"
+                data-title="Kinderarbeit">
+              <li class="map-slide__fact">
+                <p>
+                  “Malawi gilt als Land mit der höchsten Rate an Kinderarbeit
+                  in ganz Afrika”
+                </p>
+              </li>
+
+              <li class="map-slide__fact">
+                <p>
+                  “Allein auf Malawis Tabakfeldern schuften 78.000 Kinder”
+                </p>
+              </li>
+
+              <li class="map-slide__fact">
+                <p>
+                  Sie sind den Gesundheitsgefahren der Tabakpflanze am
+                  wehrlosesten ausgeliefert
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="step"
+                 data-url="banda-intro">
+          <div class="step__canvas">
+            <p class="step__teaser">
+              Kinderarbeit? Manch ein Großverdiener im Tabakgeschäft wehrt sich
+              gegen diesen Vorwurf. Wir haben einen von ihnen besucht. Willkommen
+              auf dem Anwesen von Alfred Kapichira Banda.
+            </p>
+          </div>
+        </section>
+
+        <section class="step"
+                 data-url="banda">
+          <video class="js-video js-video-play video video--fullscreen"
+                preload="none"
+                data-title="[add me]"
+                data-subtitle="[subtitle add me]">
+            <source src="{{url}}dist/videos/malawi_banda_3.mp4"
+                    type="video/mp4">
+
+            <track kind="captions"
+                   data-src="../dist/data/sub_malawi_3_banda_de.vtt"
+                   srclang="de"
+                   label="deutsch"
+                   default>
+          </video>
+        </section>
+
+        <section class="step"
+                 data-url="nafsn">
+          <div class="step__canvas">
+            <p class="step__teaser">
+              Während Malawis Regierung weg will vom Tabak, halten andere daran
+              fest. Ausgerechnet ein großes Entwicklungsprogramm behindert
+              Malawis Exitstrategie aus dem Tabak: Die “New Alliance for Food
+              Security and Nutrition” (NAFSN).
+            </p>
+          </div>
+        </section>
+
+        <section class="step"
+                 data-url="map-nafsn">
+          <div class="map js-map"></div>
+
+          <div class="map-slide">
+            <ul class="map-slide__slide">
+              <li class="map-slide__fact">
+                <p>
+                  Gegründet von den G8-Staaten (Deutschland, Frankreich, Italien,
+                  Japan, Kanada, England, USA, Russland)
+                </p>
+              </li>
+
+              <li class="map-slide__fact">
+                <p>
+                  Ziel: Binnen 10 Jahren 50 Millionen Menschen aus “absoluter
+                  Armut” befreien
+                </p>
+              </li>
+
+              <li class="map-slide__fact">
+                <p>
+                  Durch Public Private Partnerships (PPP) – gemeinsame
+                  Investitionen von Staat und Wirtschaft.
+                </p>
+              </li>
+            </ul>
+
+            <ul class="map-slide__slide">
+              <li class="map-slide__fact">
+                <p>
+                  Zielstaaten: Äthiopien, Benin, Burkina Faso, Elfenbeinküste,
+                  Ghana, Malawi, Mosambik, Nigeria, Senegal, Tansania
+                </p>
+              </li>
+
+              <li class="map-slide__fact">
+                <p>
+                  Private Partner: Nestlé, Coca-Cola, Heineken, Bayer, Syngenta,
+                  Monsanto
+                </p>
+              </li>
+
+              <li class="map-slide__fact">
+                <p>
+                  Sollen bis 2022 über 10 Milliarden $ in die Landwirtschaft
+                  investieren
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="step"
+                 data-url="alliance-one">
+          <div class="step__canvas">
+            <p class="step__teaser">
+              In Malawi beteiligen sich an der NAFSN auch die Tabakkonzerne
+              Alliance One und Limbe Leaf. Gemeinsam kaufen die beiden Giganten
+              jedes Jahr den Großteil der Tabakernte in Malawi.
+            </p>
+
+            <p class="step__teaser">
+              Mithilfe der NAFSN will Alliance One eigene Tabakforschungsinstitute
+              gründen und in großem Stil neues Land erwerben.  Derzeit besitzt das
+              Unternehmen 61.000 Hektar Land, 121.000 Hektar sollen es werden.
+              Aber ist Malawi nicht jetzt schon zu abhängig vom Tabak? Wir haben
+              bei Alliance One nachgefragt.
+            </p>
+          </div>
+        </section>
+
+        <section class="step"
+                 data-url="ngwira">
+          <video class="js-video js-video-play video video--fullscreen"
+                preload="none"
+                data-title="[add me]"
+                data-subtitle="[subtitle add me]">
+           <source src="{{url}}dist/videos/malawi_ngwira_4.mp4"
+                   type="video/mp4">
+
+           <track kind="captions"
+                  data-src="../dist/data/sub_malawi_4_ngwira_de.vtt"
+                  srclang="de"
+                  label="deutsch"
+                  default>
+          </video>
+        </section>
+
+        <section class="step"
+                 data-url="eu">
+          <div class="step__canvas">
+            <p class="step__teaser">
+              Mit der Tabakindustrie gegen Hunger? Rauchen für Malawi? Für die
+              Umsetzung der New Alliance in Malawi ist die Europäische Union
+              zuständig. Die Grünen-Abgeordnete Maria Heubuch erstattet dem
+              Ausschuss des EU-Parlaments für Entwicklung Bericht. Heubuch
+              empfiehlt der EU, aus der New Alliance auszusteigen.
+            </p>
+
+            <p class="step__teaser">
+              Auch der Entwicklungsökonom Donald Makoka sieht die NAFSN kritisch.
+              Makoka gilt als einer der ausgewiesensten Kenner des malawischen
+              Tabaksektors. Im Interview erklären Heubuch und Makoka, vor welchen
+              Problemen Malawi steht und welche Rolle Tabakindustrie und New
+              Alliance dabei spielen.
+            </p>
+          </div>
+        </section>
+
+        <section class="step"
+                 data-url="makoka-heubuch">
+          <video class="js-video js-video-play video video--fullscreen"
+                preload="none"
+                data-title="[add me]"
+                data-subtitle="[subtitle add me]">
+           <source src="{{url}}dist/videos/malawi_makoka-heubuch_5.mp4"
+                   type="video/mp4">
+
+           <track kind="captions"
+                  data-src="../dist/data/sub_malawi_5_makoka_heubuch_de.vtt"
+                  srclang="de"
+                  label="deutsch"
+                  default>
+          </video>
+        </section>
+
+        <section class="step"
+                 data-url="credits">
+          <div class="step__canvas">
+            <div class="outro">
+              <strong class="outro__title">Voll abhängig</strong>
+              <small class="outro__subtitle">Malawis Tabakproblem</small>
+
+              <dl class="outro__credits">
+                <dt>Story</dt>
+                <dd>Chris Grodotzki &amp; Marius Münstermann</dd>
+
+                <dt>Malawi Support</dt>
+                <dd>Collins Mtika &amp; Alfred Chauwa</dd>
+
+                <dt>Programmierung</dt>
+                <dd>Gustav Pursche</dd>
+              </dl>
+
+              <ul class="outro__logos">
+                <li>
+                  <a href="https://jib-collective.net/"
+                     target="_blank"
+                     class="outro__logo outro__logo--white">
+                    <svg>
+                      <title>Logo jib</title>
+                      <use xlink:href="../dist/images/sprite.svg#jib-logo"></use>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="http://www.fluter.de/"
+                     target="_blank"
+                     class="outro__logo outro__logo--white">
+                    <img src="../dist/images/fluter-logo.jpg"
+                         alt="Logo Fluter" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://correctiv.org/"
+                     target="_blank"
+                     class="outro__logo outro__logo--white">
+                     <svg>
+                       <title>Logo Correctiv</title>
+                       <use xlink:href="../dist/images/sprite.svg#correctiv-logo"></use>
+                     </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <script src="{{url}}dist/scripts/main.js"

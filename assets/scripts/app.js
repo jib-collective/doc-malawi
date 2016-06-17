@@ -122,5 +122,15 @@ Application.prototype = {
         e.preventDefault();
         self.gotoSlide($(this).attr('href'));
       });
+
+    $('.app-navigation__button--prev')
+      .on('click.app', function(e) {
+        self.prevSlide();
+      });
+
+    $('.app-navigation__button--next')
+      .on('click.app', function(e) {
+        self.nextSlide();
+      });
   }
 };
