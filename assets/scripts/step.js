@@ -150,7 +150,7 @@ Step.prototype = {
     });
 
     timeline.add(
-      TweenLite.to(self.$el.get(0), 1, {
+      TweenLite.to(self.$el.get(0), 0.2, {
         ease: Power1.easeOut,
         delay: 0.1,
         opacity: 0,
