@@ -2,7 +2,7 @@ var Application = function($steps) {
   this.$steps = $steps;
 
   this.initBindings();
-  this.initSteps($steps);
+  this.initSteps();
   this.enableFullscreenButton();
   this.enableHistorySupport();
 };
@@ -91,7 +91,7 @@ Application.prototype = {
     $.each(this.$steps, function(index) {
       var $this = $(this);
 
-      $this.data('step', new Step($this, {'$steps': $steps}));
+      $this.data('step', new Step($this, {'$steps': self.$steps}));
       $this.css('z-index', self.$steps.length - index);
     });
   },
