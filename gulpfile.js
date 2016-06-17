@@ -52,10 +52,11 @@ gulp.task('scripts', () => {
     './node_modules/gsap/src/uncompressed/TimelineLite.js',
     './node_modules/gsap/src/uncompressed/plugins/CSSPlugin.js',
     './node_modules/mapbox-gl/dist/mapbox-gl.js',
+    './assets/scripts/app.js',
     './assets/scripts/step.js',
     './assets/scripts/main.js',
   ])
-    .pipe(concat('app.js'))
+    .pipe(concat('main.js'))
     .pipe(gulp.dest('./dist/scripts/'))
 });
 

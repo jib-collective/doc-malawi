@@ -60,7 +60,7 @@ Step.prototype = {
       }
 
       self.video.on('ended', function() {
-        nextSlide();
+        application.nextSlide();
       });
     });
   },
