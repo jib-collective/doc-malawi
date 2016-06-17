@@ -9,9 +9,11 @@
   transition: opacity .2s ease-in;
   left: 0;
   width: 100%;
+  z-index: 10;
 
   &--active {
     opacity: 1;
+    z-index: 100;
   }
 
   &__canvas {
