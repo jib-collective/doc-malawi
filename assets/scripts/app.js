@@ -45,20 +45,20 @@ Application.prototype = {
   },
 
   enableFullscreenButton: function() {
-    /* Fullscreen API not available */
     if(!screenfull.enabled) {
-      $('.header__button')
-        .addClass('header__button--is-hidden');
-    } else {
-      $('.js-toggle-fullscreen')
-        .on('click', function(e) {
-          e.preventDefault();
-
-          if (screenfull.enabled) {
-            screenfull.request();
-          }
-        });
+      return;
     }
+
+    $('.header__button').removeClass('header__button--is-hidden');
+
+    $('.js-toggle-fullscreen')
+      .on('click', function(e) {
+        e.preventDefault();
+
+        if (screenfull.enabled) {
+          screenfull.request();
+        }
+      });
   },
 
   enableHistorySupport: function() {

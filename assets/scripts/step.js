@@ -71,6 +71,7 @@ Step.prototype = {
 
     $.each($maps, function() {
       var $map = $(this);
+
       self.map = new mapboxgl.Map({
         center: [
           22.708734,
