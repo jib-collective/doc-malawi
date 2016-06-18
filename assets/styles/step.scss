@@ -56,6 +56,16 @@
     }
   }
 
+  // first slide can be wider, since there are no arrows
+  &[data-url=""] &__canvas {
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include small {
+      padding: 1.5rem;
+    }
+  }
+
   &__headline {
     font-family: $font-family-serif;
     font-size: 2.4rem;
