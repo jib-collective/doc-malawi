@@ -1,5 +1,6 @@
 .app-navigation {
   display: block;
+  z-index: 200;
 
   &__button {
     background-color: $color-attention;
