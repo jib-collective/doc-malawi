@@ -100,6 +100,7 @@ Application.prototype = {
 
   initBindings: function() {
     var self = this;
+    var scrollTimer;
 
     $(window)
       .on('keydown.main', function(e) {
@@ -117,6 +118,19 @@ Application.prototype = {
       })
       .on('swipeleft.main swipeup.main', function() {
         self.nextSlide();
+      })
+      .on('DOMMouseScroll mousewheel wheel', function(e) {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function() {
+          scrollTimer = undefined;
+          var delta = e.originalEvent.deltaY;
+
+          if(delta > 0) {
+            self.nextSlide();
+          } else {
+            self.prevSlide();
+          }
+        }, 50);
       });
 
     $('.js-step-goto')
