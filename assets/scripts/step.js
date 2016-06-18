@@ -137,7 +137,8 @@ Step.prototype = {
     var $active = $facts.find('.map-slide__fact').first();
     var activeClass = 'map-slide__fact--is-active';
     var captureNav = function(direction) {
-      if(direction === 'prev' && $facts.find('.map-slide__fact--is-active').index() === 0) {
+      if((direction === 'prev' && $facts.find('.map-slide__fact--is-active').index() === 0) ||
+         (direction === 'next' && $facts.find('.map-slide__fact').length === 1)) {
         return false;
       } else {
         return true;
@@ -163,7 +164,7 @@ Step.prototype = {
       } else {
         prevFact();
       }
-    }
+    };
 
     var mapCalls = function($slide) {
       var zoomIntoMalawi = function() {
@@ -172,7 +173,7 @@ Step.prototype = {
             33.901221,
             -13.363024,
           ],
-          zoom: 5.5,
+          zoom: 5.7,
         });
       };
       var drawMalawiBorder = function() {
@@ -180,14 +181,12 @@ Step.prototype = {
           data: '../dist/data/malawi_border.webjson',
         };
         var border = new mapboxgl.GeoJSONSource(geojsonOptions);
-
         self.map.addSource('border', border);
-
         self.map.addLayer({
-          'id': 'border',
-          'type': 'fill',
-          'source': 'border',
-          'paint': {
+          id: 'border',
+          type: 'fill',
+          source: 'border',
+          paint: {
             'fill-color': 'rgba(146, 107, 67, .4)',
           }
         });
@@ -226,6 +225,8 @@ Step.prototype = {
       $active.removeClass(activeClass);
       $next.addClass(activeClass);
     };
+
+    mapCalls($active);
   },
 
   _destroyMaps: function() {
