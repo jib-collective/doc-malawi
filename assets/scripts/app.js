@@ -12,12 +12,20 @@ Application.prototype = {
     var $currentSlide = this.$steps.filter('.step--active');
     var $nextSlide = $currentSlide.next('.step');
 
+    if($currentSlide.data('step').hasCaptureApplicationNav('next')) {
+      return $currentSlide.data('step').captureApplicationNav('next');
+    }
+
     this.gotoSlide($nextSlide.data('url') || undefined);
   },
 
   prevSlide: function() {
     var $currentSlide = this.$steps.filter('.step--active');
     var $nextSlide = $currentSlide.prev('.step');
+
+    if($currentSlide.data('step').hasCaptureApplicationNav('prev')) {
+      return $currentSlide.data('step').captureApplicationNav('prev');
+    }
 
     this.gotoSlide($nextSlide.data('url') || undefined);
   },

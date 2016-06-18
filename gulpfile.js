@@ -51,8 +51,9 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', () => {
   return gulp.src([
-    './node_modules/jquery/dist/jquery.js',
+    './node_modules/jquery/dist/jquery.slim.js',
     './node_modules/screenfull/dist/screenfull.js',
+    './assets/vendor/iphone-inline-video/iphone-inline-video.js',
     './node_modules/video.js/dist/video.js',
     './node_modules/tocca/Tocca.js',
     './node_modules/mapbox-gl/dist/mapbox-gl.js',

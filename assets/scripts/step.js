@@ -23,12 +23,18 @@ Step.prototype = {
     this._updateNavigation();
   },
 
+  hasCaptureApplicationNav: function() {
+    return false;
+  },
+
+  captureApplicationNav: function(direction) {},
+
   _initVideos: function() {
     var self = this;
     var $videos = this.$el.find('.js-video');
 
     if(this.video) {
-      return this.video.load();
+      return this.video.play();
     }
 
     $.each($videos, function() {
@@ -38,6 +44,8 @@ Step.prototype = {
       $track.attr('src', $track.data('src'));
 
       if($video.hasClass('js-video-play')) {
+        makeVideoPlayableInline($video.get(0));
+
         self.video = videojs($video.get(0), {controls: true}, function() {
           var $videoContainer = $(self.video.el_);
           var $controls = $videoContainer.find('.vjs-control-bar');
@@ -111,35 +119,105 @@ Step.prototype = {
         zoom: 2,
       });
 
-      var geojsonOptions = {
-        data: '../dist/data/malawi_border.webjson',
-      };
-      var border = new mapboxgl.GeoJSONSource(geojsonOptions);
-
-      self.map.on('load', function() {
-        setTimeout(function() {
-          // add border layer
-          self.map.addSource('border', border);
-
-          self.map.addLayer({
-            'id': 'border',
-            'type': 'fill',
-            'source': 'border',
-            'paint': {
-              'fill-color': 'rgba(255, 255, 255, .2)',
-            }
-          });
-
-          self.map.easeTo({
-            center: [
-              33.901221,
-              -13.363024,
-            ],
-            zoom: 5.5,
-          });
-        }, 3000);
-      });
+      self._initMapSlides($map);
     });
+  },
+
+  _initMapSlides: function($map) {
+    var self = this;
+    var $facts = $map.next('.map-slide');
+    var $active = $facts.find('.map-slide__fact').first();
+    var activeClass = 'map-slide__fact--is-active';
+    var captureNav = function(direction) {
+      if(direction === 'prev' && $facts.find('.map-slide__fact--is-active').index() === 0) {
+        return false;
+      } else {
+        return true;
+      }
+    };
+    var nocCaptureNav = function() {
+      return false;
+    }
+
+    if(!$facts.length) {
+      return;
+    }
+
+    $active
+      .addClass(activeClass)
+      .siblings()
+        .removeClass(activeClass);
+
+    this.hasCaptureApplicationNav = captureNav;
+    this.captureApplicationNav = function(direction) {
+      if(direction === 'next') {
+        nextFact();
+      } else {
+        prevFact();
+      }
+    }
+
+    var mapCalls = function($slide) {
+      var zoomIntoMalawi = function() {
+        self.map.easeTo({
+          center: [
+            33.901221,
+            -13.363024,
+          ],
+          zoom: 5.5,
+        });
+      };
+      var drawMalawiBorder = function() {
+        var geojsonOptions = {
+          data: '../dist/data/malawi_border.webjson',
+        };
+        var border = new mapboxgl.GeoJSONSource(geojsonOptions);
+
+        self.map.addSource('border', border);
+
+        self.map.addLayer({
+          'id': 'border',
+          'type': 'fill',
+          'source': 'border',
+          'paint': {
+            'fill-color': 'rgba(146, 107, 67, .4)',
+          }
+        });
+      };
+
+      if($slide.data('zoomintomalawi')) {
+        drawMalawiBorder();
+        zoomIntoMalawi();
+      }
+    };
+
+    var prevFact = function() {
+      var $active = $facts.find('.' + activeClass);
+      var $next = $active.prev();
+
+      if(!$next.prev().length) {
+        self.hasCaptureApplicationNav = nocCaptureNav;
+      }
+
+      mapCalls($next);
+
+      $active.removeClass(activeClass);
+      $next.addClass(activeClass);
+    };
+
+    var nextFact = function() {
+      var $active = $facts.find('.' + activeClass);
+      var $next = $active.next();
+
+      if(!$next.next().length) {
+        self.hasCaptureApplicationNav = nocCaptureNav;
+      }
+
+      mapCalls($next);
+
+      $active.removeClass(activeClass);
+      $next.addClass(activeClass);
+    };
   },
 
   _destroyMaps: function() {

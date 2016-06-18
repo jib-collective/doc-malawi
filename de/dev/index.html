@@ -90,12 +90,8 @@
 
             <a href="chisenga"
                class="button button--intro js-step-goto">
-              <svg class="button__icon"
-                   width="1792"
-                   height="1792"
-                   viewBox="0 0 1792 1792"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path d="M1576 927l-1328 738q-23 13-39.5 3t-16.5-36v-1472q0-26 16.5-36t39.5 3l1328 738q23 13 23 31t-23 31z" fill="#fff"/>
+              <svg class="button__icon">
+                <use xlink:href="../dist/images/sprite.svg#play"></use>
               </svg>
               <span class="button__label">
                 Anschauen
@@ -111,6 +107,10 @@
                  preload="none"
                  data-title="Erisa Chisenga Jere"
                  data-subtitle="Tabakbauer">
+
+            <source src="{{url}}dist/videos/malawi_chisenga_1.webm"
+                    type="video/webm">
+
             <source src="{{url}}dist/videos/malawi_chisenga_1.mp4"
                     type="video/mp4">
 
@@ -141,37 +141,175 @@
           <div class="map-slide">
             <ul class="map-slide__slide"
                 data-title="Keyfacts">
-              <li class="map-slide__fact">
-                <p>
-                  Bevölkerung: 17.2 Millionen
-                </p>
-              </li>
-              <li class="map-slide__fact">
-                <p>
-                  “50% der Bevölkerung leben von weniger als 1$ am Tag”
-                </p>
-              </li>
-              <li class="map-slide__fact">
-                <p>
-                  “Jedes zweite Kind ist chronisch mangelernährt”
-                </p>
-              </li>
-            </ul>
+              <li class="map-slide__fact map-slide__fact--is-active">
+                <div class="map-slide__graphic">
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                </div>
 
-            <ul class="map-slide__slide"
-                data-title="Burley Tabak">
+                <strong class="map-slide__title">
+                  Bevölkerung: 17.2 Millionen
+                </strong>
+
+                <p class="map-slide__content">
+                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                  diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                  aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                  justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+                  sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </p>
+              </li>
+              <li class="map-slide__fact"
+                  data-zoomintomalawi="true">
+                <div class="map-slide__graphic">
+                  <svg class="map-slide__icon map-slide__icon--colorize">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon map-slide__icon--colorize">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon map-slide__icon--colorize">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon map-slide__icon--colorize">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon map-slide__icon--colorize">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon map-slide__icon--colorize">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon map-slide__icon--colorize">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon map-slide__icon--colorize">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon map-slide__icon--colorize">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                  <svg class="map-slide__icon">
+                    <use xlink:href="../dist/images/sprite.svg#person-male"></use>
+                  </svg>
+                </div>
+
+                <strong class="map-slide__title">
+                  “50% der Bevölkerung leben von weniger als 1$ am Tag”
+                </strong>
+
+                <p class="map-slide__content">
+                  At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                  clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                  olor sit amet.
+                </p>
+              </li>
               <li class="map-slide__fact">
-                <p>
+                <strong class="map-slide__title">
+                  “Jedes zweite Kind ist chronisch mangelernährt”
+                </strong>
+
+                <p class="map-slide__content">
+                  At vero eos et accusam et justo duo dolores et ea rebum. Stet
+                  clita kasd gubergren, no sea takimata sanctus est Lorem ipsum
+                  olor sit amet.
+                </p>
+              </li>
+
+              <li class="map-slide__fact">
+                <div class="map-slide__graphic">
+                  <svg class="map-slide__icon map-slide__icon--colorize">
+                    <use xlink:href="../dist/images/sprite.svg#leaf"></use>
+                  </svg>
+                </div>
+
+                <strong class="map-slide__title">Lorem ipsum sit amet</strong>
+
+                <p class="map-slide__content">
                   Weltmarktführer im Export von Burley-Tabak
                 </p>
-              </li>
-              <li class="map-slide__fact">
-                <p>
+
+                <p class="map-slide__content">
                   mehr als 50% der Exporteeinnahmen aus Tabak
                 </p>
-              </li>
-              <li class="map-slide__fact">
-                <p>
+
+                <p class="map-slide__content">
                   zwei Drittel der Deviseneinnahmen des Landes
                 </p>
               </li>
@@ -181,7 +319,7 @@
 
         <section class="step"
                  data-url="dependency">
-          <div class="step__canvas">
+          <article class="step__canvas">
             <p class="step__teaser">
               Ohne Devisen, keine Importe. Anders ausgedrückt: Malawi ist abhängig
               vom Tabak. Doch Rauchen wird zunehmend uncool. Immer mehr Menschen
@@ -195,7 +333,7 @@
               mitten in einem großen Dilemma steckt: Wie raus aus der Abhängigkeit
               vom Tabak, der bislang die wichtigste Einnahmequelle ist?
             </p>
-          </div>
+          </article>
         </section>
 
         <section class="step"
@@ -203,8 +341,12 @@
           <div class="step__canvas">
             <video class="js-video js-video-play video video--fullscreen"
                    preload="none"
-                   data-title="[add me]"
-                   data-subtitle="[subtitle add me]">
+                   data-title="Goodall Gondwe"
+                   data-subtitle="Finanzminister">
+
+              <source src="{{url}}dist/videos/malawi_gondwe_2.webm"
+                      type="video/webm">
+
               <source src="{{url}}dist/videos/malawi_gondwe_2.mp4"
                       type="video/mp4">
 
@@ -219,14 +361,14 @@
 
         <section class="step"
                  data-url="diversity">
-          <div class="step__canvas">
+          <article class="step__canvas">
             <p class="step__teaser">
               Malawi müsse seine Wirtschaft diversifizieren, also auch andere
               Produkte verkaufen. Doch nicht nur aus wirtschaftlicher Sicht ist
               Malawis Abhängigkeit vom Tabak problematisch. Die Arbeit mit dem
               Tabak gefährdet auch die Gesundheit der Bauern.
             </p>
-          </div>
+          </article>
         </section>
 
         <section class="step"
@@ -236,69 +378,83 @@
           <div class="map-slide">
             <ul class="map-slide__slide"
                 data-title="Folgen für die Bauern">
-              <li class="map-slide__fact">
-                <p>
+              <li class="map-slide__fact map-slide__fact--is-active">
+                <p class="map-slide__content">
                   Viele Tabakbauern arbeiten ohne Schutzkleidung
                 </p>
               </li>
 
               <li class="map-slide__fact">
-                <p>
+                <p class="map-slide__content">
                   An einem Erntetag nehmen sie soviel Nikotin auf, wie in
                   50 Zigaretten enthalten ist.
                 </p>
               </li>
 
               <li class="map-slide__fact">
-                <p>
+                <p class="map-slide__content">
                   Die Folge: “Green Tobacco Disease” –  Kopfschmerzen,
                   Schwindelanfälle, Herzrasen, Erbrechen, Durchfall.
                 </p>
               </li>
-            </ul>
 
-            <ul class="map-slide__slide"
-                data-title="Kinderarbeit">
               <li class="map-slide__fact">
-                <p>
+                <p class="map-slide__content">
                   “Malawi gilt als Land mit der höchsten Rate an Kinderarbeit
                   in ganz Afrika”
                 </p>
               </li>
 
               <li class="map-slide__fact">
-                <p>
+                <p class="map-slide__content">
                   “Allein auf Malawis Tabakfeldern schuften 78.000 Kinder”
                 </p>
               </li>
 
               <li class="map-slide__fact">
-                <p>
+                <p class="map-slide__content">
                   Sie sind den Gesundheitsgefahren der Tabakpflanze am
                   wehrlosesten ausgeliefert
                 </p>
               </li>
             </ul>
+
+            <button class="map-slide__control map-slide__control--prev">
+              <svg class="map-slide__control-icon">
+                <title>Vorheriger Fact</title>
+                <use xlink:href="../dist/images/sprite.svg#arrow-left"></use>
+              </svg>
+            </button>
+            <button class="map-slide__control map-slide__control--next">
+              <svg class="map-slide__control-icon">
+                <title>Nächster Fact</title>
+                <use xlink:href="../dist/images/sprite.svg#arrow-right"></use>
+              </svg>
+            </button>
           </div>
         </section>
 
         <section class="step"
                  data-url="banda-intro">
-          <div class="step__canvas">
+          <article class="step__canvas">
             <p class="step__teaser">
               Kinderarbeit? Manch ein Großverdiener im Tabakgeschäft wehrt sich
               gegen diesen Vorwurf. Wir haben einen von ihnen besucht. Willkommen
               auf dem Anwesen von Alfred Kapichira Banda.
             </p>
-          </div>
+          </article>
         </section>
 
         <section class="step"
                  data-url="banda">
           <video class="js-video js-video-play video video--fullscreen"
                 preload="none"
-                data-title="[add me]"
-                data-subtitle="[subtitle add me]">
+                data-title="Alfred Kapichira Banda"
+                data-subtitle="Großfarmer">
+
+            <source src="{{url}}dist/videos/malawi_banda_3.webm"
+                    type="video/webm">
+
             <source src="{{url}}dist/videos/malawi_banda_3.mp4"
                     type="video/mp4">
 
@@ -312,14 +468,14 @@
 
         <section class="step"
                  data-url="nafsn">
-          <div class="step__canvas">
+          <article class="step__canvas">
             <p class="step__teaser">
               Während Malawis Regierung weg will vom Tabak, halten andere daran
               fest. Ausgerechnet ein großes Entwicklungsprogramm behindert
               Malawis Exitstrategie aus dem Tabak: Die “New Alliance for Food
               Security and Nutrition” (NAFSN).
             </p>
-          </div>
+          </article>
         </section>
 
         <section class="step"
@@ -328,22 +484,22 @@
 
           <div class="map-slide">
             <ul class="map-slide__slide">
-              <li class="map-slide__fact">
-                <p>
+              <li class="map-slide__fact map-slide__fact--is-active">
+                <p class="map-slide__fact">
                   Gegründet von den G8-Staaten (Deutschland, Frankreich, Italien,
                   Japan, Kanada, England, USA, Russland)
                 </p>
               </li>
 
               <li class="map-slide__fact">
-                <p>
+                <p class="map-slide__fact">
                   Ziel: Binnen 10 Jahren 50 Millionen Menschen aus “absoluter
                   Armut” befreien
                 </p>
               </li>
 
               <li class="map-slide__fact">
-                <p>
+                <p class="map-slide__fact">
                   Durch Public Private Partnerships (PPP) – gemeinsame
                   Investitionen von Staat und Wirtschaft.
                 </p>
@@ -352,21 +508,21 @@
 
             <ul class="map-slide__slide">
               <li class="map-slide__fact">
-                <p>
+                <p class="map-slide__fact">
                   Zielstaaten: Äthiopien, Benin, Burkina Faso, Elfenbeinküste,
                   Ghana, Malawi, Mosambik, Nigeria, Senegal, Tansania
                 </p>
               </li>
 
               <li class="map-slide__fact">
-                <p>
+                <p class="map-slide__fact">
                   Private Partner: Nestlé, Coca-Cola, Heineken, Bayer, Syngenta,
                   Monsanto
                 </p>
               </li>
 
               <li class="map-slide__fact">
-                <p>
+                <p class="map-slide__fact">
                   Sollen bis 2022 über 10 Milliarden $ in die Landwirtschaft
                   investieren
                 </p>
@@ -377,7 +533,7 @@
 
         <section class="step"
                  data-url="alliance-one">
-          <div class="step__canvas">
+          <article class="step__canvas">
             <p class="step__teaser">
               In Malawi beteiligen sich an der NAFSN auch die Tabakkonzerne
               Alliance One und Limbe Leaf. Gemeinsam kaufen die beiden Giganten
@@ -391,15 +547,19 @@
               Aber ist Malawi nicht jetzt schon zu abhängig vom Tabak? Wir haben
               bei Alliance One nachgefragt.
             </p>
-          </div>
+          </article>
         </section>
 
         <section class="step"
                  data-url="ngwira">
           <video class="js-video js-video-play video video--fullscreen"
                 preload="none"
-                data-title="[add me]"
-                data-subtitle="[subtitle add me]">
+                data-title="Ronald Ngwira"
+                data-subtitle="Alliance One">
+
+           <source src="{{url}}dist/videos/malawi_ngwira_4.webm"
+                   type="video/webm">
+
            <source src="{{url}}dist/videos/malawi_ngwira_4.mp4"
                    type="video/mp4">
 
@@ -413,7 +573,7 @@
 
         <section class="step"
                  data-url="eu">
-          <div class="step__canvas">
+          <article class="step__canvas">
             <p class="step__teaser">
               Mit der Tabakindustrie gegen Hunger? Rauchen für Malawi? Für die
               Umsetzung der New Alliance in Malawi ist die Europäische Union
@@ -429,15 +589,19 @@
               Problemen Malawi steht und welche Rolle Tabakindustrie und New
               Alliance dabei spielen.
             </p>
-          </div>
+          </article>
         </section>
 
         <section class="step"
                  data-url="makoka-heubuch">
           <video class="js-video js-video-play video video--fullscreen"
                 preload="none"
-                data-title="[add me]"
-                data-subtitle="[subtitle add me]">
+                data-title="Donald Makoka / Maria Heubuch"
+                data-subtitle="Entwicklungsökonom / EU-Abgeordnete">
+
+           <source src="{{url}}dist/videos/malawi_makoka-heubuch_5.webm"
+                   type="video/webm">
+
            <source src="{{url}}dist/videos/malawi_makoka-heubuch_5.mp4"
                    type="video/mp4">
 
