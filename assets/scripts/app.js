@@ -120,6 +120,10 @@ Application.prototype = {
         self.nextSlide();
       })
       .on('DOMMouseScroll mousewheel wheel', function(e) {
+        if(self.$steps.eq(0).hasClass('step--active')) {
+          return false;
+        }
+
         clearTimeout(scrollTimer);
         scrollTimer = setTimeout(function() {
           scrollTimer = undefined;
