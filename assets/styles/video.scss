@@ -14,12 +14,5 @@
       transform: translateX(-50%);
       width: 100%;
     }
-
-    &::-webkit-media-controls-play-button,
-    &::-webkit-media-controls-start-playback-button {
-      opacity: 0;
-      pointer-events: none;
-      width: 5px;
-    }
   }
 }

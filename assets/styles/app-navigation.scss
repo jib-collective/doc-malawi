@@ -1,9 +1,5 @@
 .app-navigation {
-  display: none;
-
-  @include small {
-    display: block;
-  }
+  display: block;
 
   &__button {
     background-color: $color-attention;
