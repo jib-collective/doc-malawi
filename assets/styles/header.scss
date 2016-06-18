@@ -41,9 +41,13 @@
     display: inline-block;
     float: right;
     font-family: $font-family-sans-serif;
-    font-size: .8rem;
+    font-size: .5rem;
     vertical-align: middle;
     width: auto;
+
+    @include medium {
+      font-size: .8rem;
+    }
 
     a {
       color: currentColor;
@@ -57,8 +61,13 @@
   }
 
   &__share-icon {
-    height: 1.2rem;
+    height: .8rem;
     vertical-align: middle;
-    width: 1.2rem;
+    width: .8rem;
+
+    @include medium {
+      height: 1.2rem;
+      width: 1.2rem;
+    }
   }
 }

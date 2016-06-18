@@ -116,6 +116,7 @@ Step.prototype = {
       var $map = $(this);
 
       self.map = new mapboxgl.Map({
+        attributionControl: false,
         center: [
           22.708734,
           7.099980,
