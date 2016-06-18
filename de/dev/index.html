@@ -1,13 +1,31 @@
 <!doctype html>
 <html lang="de">
   <head>
-    <title>Voll abhängig</title>
+    <title>Voll abhängig - Malawis Tabakproblem</title>
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet"
           href="{{url}}dist/styles/main.css{{version}}" />
+
+    <link rel="dns-prefetch"
+          href="{{url}}" />
+
+    <link rel="dns-prefetch"
+          href="https://api.mapbox.com" />
+
+    <link rel="preconnect"
+          href="{{url}}"
+          crossorigin />
+
+    <link rel="preconnect"
+          href="https://api.mapbox.com"
+          crossorigin />
+
+    <link rel="prefetch"
+          href="{{url}}dist/scripts/main.js"
+          as="script" />
 
     <!--
       Twitter Meta-Tags
@@ -338,25 +356,23 @@
 
         <section class="step"
                  data-url="gondwe">
-          <div class="step__canvas">
-            <video class="js-video js-video-play video video--fullscreen"
-                   preload="none"
-                   data-title="Goodall Gondwe"
-                   data-subtitle="Finanzminister">
+          <video class="js-video js-video-play video video--fullscreen"
+                 preload="none"
+                 data-title="Goodall Gondwe"
+                 data-subtitle="Finanzminister">
 
-              <source src="{{url}}dist/videos/malawi_gondwe_2.webm"
-                      type="video/webm">
+           <source src="{{url}}dist/videos/malawi_gondwe_2.webm"
+                   type="video/webm">
 
-              <source src="{{url}}dist/videos/malawi_gondwe_2.mp4"
-                      type="video/mp4">
+           <source src="{{url}}dist/videos/malawi_gondwe_2.mp4"
+                   type="video/mp4">
 
-              <track kind="captions"
-                     data-src="../dist/data/sub_malawi_2_gondwe_de.vtt"
-                     srclang="de"
-                     label="deutsch"
-                     default>
-            </video>
-          </div>
+           <track kind="captions"
+                  data-src="../dist/data/sub_malawi_2_gondwe_de.vtt"
+                  srclang="de"
+                  label="deutsch"
+                  default>
+          </video>
         </section>
 
         <section class="step"

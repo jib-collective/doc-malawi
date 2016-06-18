@@ -76,7 +76,7 @@ gulp.task('html', () => {
 
 gulp.task('videos', () => {
   return gulp.src([
-    './assets/videos/**/*.mp4',
+    './assets/videos/**/*',
   ])
     .pipe(gulp.dest('./dist/videos/'));
 });
