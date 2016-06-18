@@ -193,8 +193,15 @@ Step.prototype = {
       };
 
       if($slide.data('zoomintomalawi')) {
-        drawMalawiBorder();
-        zoomIntoMalawi();
+        if(self.map.loaded()) {
+          drawMalawiBorder();
+          zoomIntoMalawi();
+        } else {
+          self.map.on('load', function() {
+            drawMalawiBorder();
+            zoomIntoMalawi();
+          });
+        }
       }
     };
 
