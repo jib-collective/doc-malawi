@@ -44,8 +44,6 @@ Step.prototype = {
       $track.attr('src', $track.data('src'));
 
       if($video.hasClass('js-video-play')) {
-        makeVideoPlayableInline($video.get(0));
-
         self.video = videojs($video.get(0), {controls: true}, function() {
           var $videoContainer = $(self.video.el_);
           var $controls = $videoContainer.find('.vjs-control-bar');
