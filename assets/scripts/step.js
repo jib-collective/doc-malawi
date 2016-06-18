@@ -40,62 +40,71 @@ Step.prototype = {
     $.each($videos, function() {
       var $video = $(this);
       var $track = $video.children('track');
+      var addVideoBindings = function(video, $playControl) {
+        if(!video) {
+          return;
+        }
 
+        video.on('play', function() {
+          changePlayIcon($playControl, 'pause');
+        });
+
+        video.on('pause', function() {
+          changePlayIcon($playControl, 'play');
+        });
+
+        video.on('ended', function() {
+          application.nextSlide();
+        });
+      };
+      var changePlayIcon = function($playControl, state) {
+        $playControl
+          .children('svg')
+            .children('use')
+              .attr({
+                'xlink:href': '../dist/images/sprite.svg#' + state,
+              });
+      };
+      var initPlayer = function() {
+        var $videoContainer = $(self.video.el_);
+        var $controls = $videoContainer.find('.vjs-control-bar');
+        var $playControl = $videoContainer.find('.vjs-play-control');
+        var title = $videoContainer.data('title');
+        var subtitle = $videoContainer.data('subtitle');
+        var $playIcon = $('<div/>')
+                          .append(
+                            $('<svg/>')
+                            .addClass('vjs-play-control-icon')
+                            .append(
+                              $('<use/>')
+                                .attr('xlink:href', '../dist/images/sprite.svg#pause')
+                            )
+                          );
+
+        $playControl.html($playIcon.html());
+
+        if(title || subtitle) {
+          var $title = $('<strong/>').text(title);
+          var $subtitle = $('<small/>').text(subtitle);
+          var $control = $('<span/>')
+                        .append($title)
+                        .append($subtitle)
+                        .addClass('vjs-video-title');
+
+          $controls.prepend($control);
+        }
+
+        addVideoBindings(self.video, $playControl);
+
+        this.play();
+      };
+
+      // Add subtitles
       $track.attr('src', $track.data('src'));
 
       if($video.hasClass('js-video-play')) {
-        self.video = videojs($video.get(0), {controls: true}, function() {
-          var $videoContainer = $(self.video.el_);
-          var $controls = $videoContainer.find('.vjs-control-bar');
-          var $playControl = $videoContainer.find('.vjs-play-control');
-          var title = $videoContainer.data('title');
-          var subtitle = $videoContainer.data('subtitle');
-          var changePlayIcon = function($playControl, state) {
-            $playControl
-              .children('svg')
-                .children('use')
-                  .attr({
-                    'xlink:href': '../dist/images/sprite.svg#' + state,
-                  });
-          };
-          var $playIcon = $('<div/>')
-                            .append(
-                              $('<svg/>')
-                              .addClass('vjs-play-control-icon')
-                              .append(
-                                $('<use/>')
-                                  .attr('xlink:href', '../dist/images/sprite.svg#pause')
-                              )
-                            );
-
-          $playControl.html($playIcon.html());
-
-          self.video.on('play', function() {
-            changePlayIcon($playControl, 'pause');
-          });
-
-          self.video.on('pause', function() {
-            changePlayIcon($playControl, 'play');
-          });
-
-          if(title || subtitle) {
-            var $title = $('<strong/>').text(title);
-            var $subtitle = $('<small/>').text(subtitle);
-            var $control = $('<span/>')
-                          .append($title)
-                          .append($subtitle)
-                          .addClass('vjs-video-title');
-
-            $controls.prepend($control);
-          }
-
-          this.play();
-        });
+        self.video = videojs($video.get(0), {controls: true}, initPlayer);
       }
-
-      self.video.on('ended', function() {
-        application.nextSlide();
-      });
     });
   },
 
