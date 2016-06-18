@@ -5,6 +5,7 @@ var Application = function($steps) {
   this.initBindings();
   this.enableFullscreenButton();
   this.enableHistorySupport();
+  this.initShareButtons();
 };
 
 Application.prototype = {
@@ -139,5 +140,41 @@ Application.prototype = {
       .on('click.app', function(e) {
         self.nextSlide();
       });
-  }
+  },
+
+  initShareButtons: function() {
+    $('.js-share-button').on('click.share', function(e) {
+      e.preventDefault();
+
+      var url = $(this).attr('href');
+      var width = $(window).width() - 150;
+      var height = $(window).height() - 150;
+
+      if(width > 600) {
+        width = 600;
+      }
+
+      if(height > 400) {
+        height = 400;
+      }
+
+      var popupCenter = function(url, title, w, h) {
+          var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+          var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+
+          var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+          var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+          var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+          var top = ((height / 2) - (h / 2)) + dualScreenTop;
+          var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+
+          if (window.focus) {
+            newWindow.focus();
+          }
+      }
+
+      popupCenter(url, 'Geschichte teilen', width, height);
+    });
+  },
 };

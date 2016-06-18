@@ -1,5 +1,8 @@
 .header {
-  padding-top: 1rem;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .4) 10%, transparent);
+  font-weight: bold;
+  padding-bottom: 1rem;
+  padding-top: .7rem;
   padding-right: 1.5rem;
   position: fixed;
   text-align: center;
@@ -26,9 +29,36 @@
   }
 
   &__button-icon {
-    height: 1.5rem;
-    margin-right: .1rem;
+    height: 1.2rem;
+    margin-right: .2rem;
     vertical-align: middle;
-    width: 1.5rem;
+    width: 1.2rem;
+  }
+
+  &__share {
+    color: white;
+    display: inline-block;
+    float: right;
+    font-family: $font-family-sans-serif;
+    font-size: .8rem;
+    margin-right: 1.5rem;
+    vertical-align: middle;
+    width: auto;
+
+    a {
+      color: currentColor;
+      margin-left: .2rem;
+      text-decoration: none;
+    }
+
+    a + a {
+      margin-left: .5rem;
+    }
+  }
+
+  &__share-icon {
+    height: 1.2rem;
+    vertical-align: middle;
+    width: 1.2rem;
   }
 }
