@@ -16,6 +16,7 @@
     color: white;
     display: inline-block;
     float: right;
+    font-size: .5rem;
     margin-left: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
@@ -27,13 +28,22 @@
     &--is-hidden {
       display: none;
     }
+
+    @include medium {
+      font-size: .8rem;
+    }
   }
 
   &__button-icon {
-    height: 1.2rem;
+    height: .8rem;
     margin-right: .2rem;
     vertical-align: middle;
-    width: 1.2rem;
+    width: .8rem;
+
+    @include medium {
+      height: 1.2rem;
+      width: 1.2rem;
+    }
   }
 
   &__share {
