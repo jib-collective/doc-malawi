@@ -129,7 +129,7 @@ Step.prototype = {
         container: $map.get(0),
         interactive: false,
         style: 'mapbox://styles/mapbox/dark-v9',
-        zoom: 2,
+        zoom: 2.5,
       });
 
       self._initMapSlides($map);
@@ -209,6 +209,10 @@ Step.prototype = {
       };
 
       var drawMalawiBorder = function() {
+        if(self.map.getSource('malawi_border')) {
+          return;
+        }
+
         var geojsonOptions = {
           data: buildUrl('malawi_border'),
         };
@@ -223,6 +227,16 @@ Step.prototype = {
         var borders = new mapboxgl.GeoJSONSource(geojsonOptions);
         drawGeoJSONLine('nafsn_countries', borders);
       };
+
+      if($slide.data('drawmalawi')) {
+        if(self.map.loaded()) {
+          drawMalawiBorder();
+        } else {
+          self.map.on('load', function() {
+            drawMalawiBorder();
+          });
+        }
+      }
 
       if($slide.data('zoomintomalawi')) {
         if(self.map.loaded()) {
