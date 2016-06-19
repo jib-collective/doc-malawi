@@ -132,7 +132,9 @@ Step.prototype = {
         zoom: 2.5,
       });
 
-      self.map.setLayoutProperty('country-label-lg', 'text-field', '{name_de}')
+      self.map.on('load', function() {
+        self.map.setLayoutProperty('country-label-lg', 'text-field', '{name_de}');
+      });
       self._initMapSlides($map);
     });
   },
