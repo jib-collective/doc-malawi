@@ -21,6 +21,11 @@ Step.prototype = {
     this._initVideos();
     this._initMaps();
     this._updateNavigation();
+
+    // track the view of that slide
+    if(typeof(window.ga) === 'function') {
+      ga('send', 'pageview', location.pathname);
+    }
   },
 
   hasCaptureApplicationNav: function() {
