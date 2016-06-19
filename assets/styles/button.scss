@@ -14,9 +14,14 @@
     font-size: 1.2rem;
     font-weight: 700;
     line-height: 1;
-    padding: .8rem 1.5rem .65rem 1.2rem;
+    padding: .8rem 1.2rem .65rem 1.2rem;
     text-shadow: 1px 1px darken($color-attention, 10%);
     text-transform: uppercase;
+
+    @include medium {
+      font-size: 1.4rem;
+      padding: 1rem 1.2rem .85rem 1.4rem;
+    }
 
     &:hover,
     &:focus {
@@ -29,10 +34,18 @@
   }
 
   &__icon {
+    fill: white;
     height: 1.5rem;
-    margin-right: .3rem;
+    margin-left: .3rem;
+    margin-top: -.3rem;
     vertical-align: middle;
     width: 1.5rem;
+
+    @include medium {
+      height: 2.5rem;
+      margin-left: 1.5rem;
+      width: 2.5rem;
+    }
   }
 
   &__label {
@@ -46,5 +59,9 @@
     font-weight: normal;
     margin-top: .1rem;
     text-transform: none;
+
+    @include medium {
+      font-size: .8rem;
+    }
   }
 }
