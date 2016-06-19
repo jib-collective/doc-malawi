@@ -92,9 +92,7 @@ Application.prototype = {
 
     $.each(this.$steps, function(index) {
       var $this = $(this);
-
       $this.data('step', new Step($this, {'$steps': self.$steps}));
-      //$this.css('z-index', self.$steps.length - index);
     });
   },
 
@@ -106,17 +104,29 @@ Application.prototype = {
       .on('keydown.main', function(e) {
         switch(e.which) {
           case 39:
+            if(typeof(window.ga) === 'function') {
+              ga('send', 'event', 'Navigation', 'Key Next');
+            }
             self.nextSlide();
             break;
           case 37:
+            if(typeof(window.ga) === 'function') {
+              ga('send', 'event', 'Navigation', 'Key Previous');
+            }
             self.prevSlide();
             break;
         }
       })
       .on('swiperight.main swipedown.main', function() {
+        if(typeof(window.ga) === 'function') {
+          ga('send', 'event', 'Navigation', 'Swipe Right');
+        }
         self.prevSlide();
       })
       .on('swipeleft.main swipeup.main', function() {
+        if(typeof(window.ga) === 'function') {
+          ga('send', 'event', 'Navigation', 'Swipe Left');
+        }
         self.nextSlide();
       })
       .on('DOMMouseScroll mousewheel wheel', function(e) {
@@ -130,8 +140,16 @@ Application.prototype = {
           var delta = e.originalEvent.deltaY;
 
           if(delta > 0) {
+            if(typeof(window.ga) === 'function') {
+              ga('send', 'event', 'Navigation', 'Scroll Next');
+            }
+
             self.nextSlide();
           } else {
+            if(typeof(window.ga) === 'function') {
+              ga('send', 'event', 'Navigation', 'Scroll Previous');
+            }
+
             self.prevSlide();
           }
         }, 50);
@@ -151,11 +169,17 @@ Application.prototype = {
 
     $('.app-navigation__button--prev')
       .on('click.app', function(e) {
+        if(typeof(window.ga) === 'function') {
+          ga('send', 'event', 'Navigation', 'Button Previous');
+        }
         self.prevSlide();
       });
 
     $('.app-navigation__button--next')
       .on('click.app', function(e) {
+        if(typeof(window.ga) === 'function') {
+          ga('send', 'event', 'Navigation', 'Button Next');
+        }
         self.nextSlide();
       });
   },
