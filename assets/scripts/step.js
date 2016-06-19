@@ -167,6 +167,22 @@ Step.prototype = {
     };
 
     var mapCalls = function($slide) {
+      var buildUrl = function(filename) {
+        return '../dist/data/' + filename + '.webjson';
+      };
+
+      var drawGeoJSONLine = function(index, data) {
+        self.map.addSource(index, data);
+        self.map.addLayer({
+          id: index,
+          type: 'fill',
+          source: index,
+          paint: {
+            'fill-color': 'rgba(146, 107, 67, .4)',
+          }
+        });
+      };
+
       var zoomIntoMalawi = function() {
         self.map.easeTo({
           center: [
@@ -176,20 +192,31 @@ Step.prototype = {
           zoom: 5.7,
         });
       };
+
+      var zoomIntoAfrica = function() {
+        self.map.easeTo({
+          center: [
+            16.481271,
+            7.762428,
+          ],
+          zoom: 3,
+        });
+      };
+
       var drawMalawiBorder = function() {
         var geojsonOptions = {
-          data: '../dist/data/malawi_border.webjson',
+          data: buildUrl('malawi_border'),
         };
         var border = new mapboxgl.GeoJSONSource(geojsonOptions);
-        self.map.addSource('border', border);
-        self.map.addLayer({
-          id: 'border',
-          type: 'fill',
-          source: 'border',
-          paint: {
-            'fill-color': 'rgba(146, 107, 67, .4)',
-          }
-        });
+        drawGeoJSONLine('malawi_border', border);
+      };
+
+      var drawNAFSNCountries = function() {
+        var geojsonOptions = {
+          data: buildUrl('nafsn_countries'),
+        };
+        var borders = new mapboxgl.GeoJSONSource(geojsonOptions);
+        drawGeoJSONLine('nafsn_countries', borders);
       };
 
       if($slide.data('zoomintomalawi')) {
@@ -200,6 +227,18 @@ Step.prototype = {
           self.map.on('load', function() {
             drawMalawiBorder();
             zoomIntoMalawi();
+          });
+        }
+      }
+
+      if($slide.data('zoomintonafsn')) {
+        if(self.map.loaded()) {
+          drawNAFSNCountries();
+          zoomIntoAfrica();
+        } else {
+          self.map.on('load', function() {
+            drawNAFSNCountries();
+            zoomIntoAfrica();
           });
         }
       }

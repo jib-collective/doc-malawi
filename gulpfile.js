@@ -159,6 +159,7 @@ gulp.task('watch', () => {
   gulp.watch('./assets/styles/**/*.scss', ['styles']);
   gulp.watch('./assets/scripts/**/*.js', ['scripts']);
   gulp.watch('./assets/images/**/*.svg', ['images']);
+  gulp.watch('./assets/data/**/*', ['data']);
   gulp.watch('./de/**/*.html', ['html']);
 });
 
