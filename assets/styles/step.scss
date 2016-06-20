@@ -46,12 +46,13 @@
 
   &__canvas {
     left: 50%;
+    max-height: 100%;
+    max-width: 50rem;
     padding: 1rem 3.5rem;
     overflow-y: auto;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    max-width: 50rem;
     width: 100%;
 
     @include small {

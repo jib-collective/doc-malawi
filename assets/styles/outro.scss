@@ -60,11 +60,12 @@
 
     > li {
       display: block;
+      padding: 0 .1rem;
       vertical-align: top;
       width: 100%;
 
       @include medium {
-        display: inline-block;
+        float: left;
         width: 33%;
       }
     }
@@ -79,8 +80,17 @@
   }
 
   &__logo {
-    display: inline-block;
+    background-color: white;
+    display: block;
     padding: .5rem;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      background-color: $color-attention;
+    }
 
     &,
     > * {
@@ -90,11 +100,25 @@
 
     > svg {
       height: 4rem;
-      width: 100%;
+      max-width: 100%;
+      position: relative;
+      width: 10rem;
     }
 
-    &--white {
-      background-color: white;
+    &--fluter > svg {
+      top: -.5rem;
+    }
+
+    &--fluter:hover > svg,
+    &--fluter:focus > svg,
+    &--jib:focus > svg,
+    &--jib:hover > svg {
+      fill: white;
+    }
+
+    &--correctiv:hover > svg,
+    &--correctiv:focus > svg {
+      stroke: white;
     }
   }
 }
