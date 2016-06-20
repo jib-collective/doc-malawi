@@ -108,6 +108,9 @@ Step.prototype = {
       // Add subtitles
       $track.attr('src', $track.data('src'));
 
+      // Add video poster
+      $video.attr('poster', $video.data('poster'));
+
       if($video.hasClass('js-video-play')) {
         self.video = videojs($video.get(0), {controls: true}, initPlayer);
       }
