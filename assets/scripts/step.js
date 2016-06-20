@@ -21,6 +21,7 @@ Step.prototype = {
     this._initVideos();
     this._initMaps();
     this._updateNavigation();
+    this._updateProgress();
 
     // track the view of that slide
     if(typeof(window.ga) === 'function') {
@@ -332,5 +333,12 @@ Step.prototype = {
     if(typeof(cb) === 'function') {
       cb();
     }
+  },
+
+  _updateProgress: function() {
+    var $progressbar = $('.header__progress');
+    var index = this.$el.index() + 1;
+
+    $progressbar.css('width', ((index / this.options.$steps.length) * 100 ) + '%');
   },
 };
