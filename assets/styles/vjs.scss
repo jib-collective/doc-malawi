@@ -127,7 +127,7 @@
   }
 
   &-text-track-display {
-    bottom: 6rem;
+    bottom: 6.5rem;
     left: 50%;
 
     position: absolute;
@@ -135,12 +135,13 @@
     width: 40rem;
 
     > div > div {
-      font-size: 1.2rem !important;
+      font-size: 1.35rem !important;
+      font-weight: bold !important;
     }
 
     > div > div > div {
-      background-color: rgba(0, 0, 0, .5) !important;
-      padding: .3rem;
+      background-color: rgba(0, 0, 0, .7) !important;
+      padding: .4rem .8rem;
     }
   }
 }
