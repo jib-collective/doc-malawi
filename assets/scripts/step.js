@@ -6,6 +6,9 @@ var Step = function($el, options) {
 Step.prototype = {
   init: function() {
     this.$el.addClass('step--active');
+    this.$el.attr({
+      tabindex: -1,
+    })
     this.url = this.$el.data('url');
 
     if(history) {
@@ -330,6 +333,7 @@ Step.prototype = {
 
   destroy: function(cb) {
     this.$el.removeClass('step--active');
+    this.$el.removeAttr('tabindex');
     this._destroyMaps();
     this._destroyVideos();
 
