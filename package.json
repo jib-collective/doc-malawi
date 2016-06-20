@@ -3,9 +3,6 @@
   "version": "1.1.0",
   "description": "A webdoc about tabacco in Malawi.",
   "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gustavpursche/doc-malawi.git"
@@ -15,7 +12,7 @@
   "bugs": {
     "url": "https://github.com/gustavpursche/doc-malawi/issues"
   },
-  "homepage": "https://github.com/gustavpursche/doc-malawi#readme",
+  "homepage": "https://jib-collective.net/stories/malawi/de/",
   "dependencies": {
     "concurrent-transform": "^1.0.0",
     "gulp": "^3.9.1",
