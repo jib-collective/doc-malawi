@@ -1,5 +1,7 @@
 'use strict';
 
+const config = require('./config.json');
+
 const autoprefixer = require('gulp-autoprefixer');
 const cloudfront = require('gulp-cloudfront-invalidate');
 const concat = require('gulp-concat');
@@ -70,6 +72,9 @@ gulp.task('html', () => {
   ])
     .pipe(replace('{{url}}', '../'))
     .pipe(replace('{{version}}', ''))
+    .pipe(replace('{{facebookAppId}}', config.facebookAppId))
+    .pipe(replace('{{googleAnalyticsId}}', config.googleAnalyticsId))
+    .pipe(replace('{{mapboxAppId}}', config.mapboxAppId))
     .pipe(gulp.dest('./de/'));
 });
 
@@ -136,6 +141,9 @@ gulp.task('upload', ['styles', 'scripts', 'fonts', 'images', 'videos', 'data'], 
     }))
     .pipe(replace('{{url}}', 'https://cdn.jib-collective.net/malawi/'))
     .pipe(replace('{{version}}', '?v=' + require('./package.json').version))
+    .pipe(replace('{{facebookAppId}}', config.facebookAppId))
+    .pipe(replace('{{googleAnalyticsId}}', config.googleAnalyticsId))
+    .pipe(replace('{{mapboxAppId}}', config.mapboxAppId))
     .pipe(htmlmin());
 
   let distStream = gulp.src([

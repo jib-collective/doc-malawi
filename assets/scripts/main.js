@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiZ3VzdGF2cHVyc2NoZSIsImEiOiJhVVRUaFV3In0.IdUObuDS1u0tzNNDvNpfKg';
+mapboxgl.accessToken = window.mapboxAppId;
 
 $(function() {
   window.application = new Application($('.step'));

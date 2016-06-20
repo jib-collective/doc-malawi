@@ -3,3 +3,4 @@ node_modules/
 .awspublish-jib-cdn
 dist/
 de/index.html
+config.json

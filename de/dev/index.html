@@ -90,7 +90,7 @@
 
         <div class="header__share">
           <span>Teilen auf</span>
-          <a   href="https://www.facebook.com/dialog/share?app_id=140192479718616&display=popup&href=https%3A%2F%2Fjib-collective.net%2Fstories%2Fmalawi%2Fde%2F"
+          <a   href="https://www.facebook.com/dialog/share?app_id={{facebookAppId}}&display=popup&href=https%3A%2F%2Fjib-collective.net%2Fstories%2Fmalawi%2Fde%2F"
             class="js-share-button"
             target="_blank">
             <svg class="header__share-icon">
@@ -764,6 +764,10 @@
       </div>
     </main>
 
+    <script type="text/javascript">
+      window.mapboxAppId = '{{mapboxAppId}}';
+    </script>
+
     <script src="{{url}}dist/scripts/main.js{{version}}"
             async></script>
 
@@ -773,7 +777,7 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-64228258-3', 'auto');
+      ga('create', '{{googleAnalyticsId}}', 'auto');
       ga('set', 'anonymizeIp', true);
       ga('send', 'pageview');
     </script>
