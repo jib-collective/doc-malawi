@@ -129,7 +129,7 @@ Step.prototype = {
         ],
         container: $map.get(0),
         interactive: false,
-        style: 'mapbox://styles/mapbox/dark-v9',
+        style: 'mapbox://styles/mapbox/light-v9',
         zoom: 2.5,
       });
 
@@ -205,10 +205,10 @@ Step.prototype = {
       var zoomIntoAfrica = function() {
         self.map.easeTo({
           center: [
-            16.481271,
-            7.762428,
+            9.108066,
+            6.273109,
           ],
-          zoom: 3,
+          zoom: 2.7,
         });
       };
 
