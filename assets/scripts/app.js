@@ -117,16 +117,45 @@ Application.prototype = {
             break;
         }
       })
-      .on('swiperight.main swipedown.main', function() {
+      .on('swiperight.main swipedown.main', function(e) {
         if(typeof(window.ga) === 'function') {
           ga('send', 'event', 'Navigation', 'Swipe Right');
         }
+
+        // Cancel event, if it looks like somebody is scrolling
+        if(e.type === 'swipedown') {
+          var $canvas = $(e.target).closest('.step__canvas');
+
+          if($canvas.length) {
+            var canvasHeight = $canvas.get(0).scrollHeight;
+            var windowHeight = $(window).height();
+
+            if(canvasHeight > windowHeight) {
+              return;
+            }
+          }
+        }
+
         self.prevSlide();
       })
       .on('swipeleft.main swipeup.main', function() {
         if(typeof(window.ga) === 'function') {
           ga('send', 'event', 'Navigation', 'Swipe Left');
         }
+
+        if(e.type === 'swipeup') {
+          var $canvas = $(e.target).closest('.step__canvas');
+
+          if($canvas.length) {
+            var canvasHeight = $canvas.get(0).scrollHeight;
+            var windowHeight = $(window).height();
+
+            if(canvasHeight > windowHeight) {
+              return;
+            }
+          }
+        }
+
         self.nextSlide();
       })
       .on('DOMMouseScroll mousewheel wheel', function(e) {
@@ -144,10 +173,32 @@ Application.prototype = {
               ga('send', 'event', 'Navigation', 'Scroll Next');
             }
 
+            var $canvas = $(e.target).closest('.step__canvas');
+
+            if($canvas.length) {
+              var canvasHeight = $canvas.get(0).scrollHeight;
+              var windowHeight = $(window).height();
+
+              if(canvasHeight > windowHeight) {
+                return;
+              }
+            }
+
             self.nextSlide();
           } else {
             if(typeof(window.ga) === 'function') {
               ga('send', 'event', 'Navigation', 'Scroll Previous');
+            }
+
+            var $canvas = $(e.target).closest('.step__canvas');
+
+            if($canvas.length) {
+              var canvasHeight = $canvas.get(0).scrollHeight;
+              var windowHeight = $(window).height();
+
+              if(canvasHeight > windowHeight) {
+                return;
+              }
             }
 
             self.prevSlide();
