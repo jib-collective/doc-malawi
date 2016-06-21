@@ -126,7 +126,7 @@ Step.prototype = {
           useNativeTextTracks = false;
         }
 
-        if(isIOS) {
+        if(!isIOS) {
           self.video = videojs($video.get(0), videoJSOpts, initPlayer);
         } else {
           self.video = $video.get(0);
