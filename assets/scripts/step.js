@@ -48,7 +48,6 @@ Step.prototype = {
 
     $.each($videos, function() {
       var $video = $(this);
-      var $track = $video.children('track');
       var addVideoBindings = function(video, $playControl) {
         if(!video) {
           return;
@@ -108,14 +107,24 @@ Step.prototype = {
         this.play();
       };
 
-      // Add subtitles
-      $track.attr('src', $track.data('src'));
-
       // Add video poster
       $video.attr('poster', $video.data('poster'));
+      var useNativeTextTracks = true;
+
+      /* FIXME: Safari is somehow broken */
+      if(navigator.userAgent.indexOf('Safari') > -1) {
+        useNativeTextTracks = false;
+      }
+
+      var videoJSOpts = {
+        html5: {
+          nativeTextTracks: false
+        },
+        controls: false,
+      };
 
       if($video.hasClass('js-video-play')) {
-        self.video = videojs($video.get(0), {controls: true}, initPlayer);
+        self.video = videojs($video.get(0), videoJSOpts, initPlayer);
       }
     });
   },
