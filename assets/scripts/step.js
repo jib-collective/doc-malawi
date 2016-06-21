@@ -113,7 +113,11 @@ Step.prototype = {
 
       /* FIXME: Safari is somehow broken */
       if(navigator.userAgent.indexOf('Safari') > -1) {
-        useNativeTextTracks = false;
+        var var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+        if(!iOS) {
+          useNativeTextTracks = false;
+        }
       }
 
       var videoJSOpts = {
