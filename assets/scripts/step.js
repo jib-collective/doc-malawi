@@ -109,26 +109,29 @@ Step.prototype = {
 
       // Add video poster
       $video.attr('poster', $video.data('poster'));
-      var useNativeTextTracks = true;
 
-      /* FIXME: Safari is somehow broken */
-      if(navigator.userAgent.indexOf('Safari') > -1) {
-        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-        if(!iOS) {
-          useNativeTextTracks = false;
-        }
-      }
-
-      var videoJSOpts = {
-        html5: {
-          nativeTextTracks: useNativeTextTracks,
-        },
-        controls: false,
-      };
+      var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
       if($video.hasClass('js-video-play')) {
-        self.video = videojs($video.get(0), videoJSOpts, initPlayer);
+        var useNativeTextTracks = true;
+        var videoJSOpts = {
+          html5: {
+            nativeTextTracks: useNativeTextTracks,
+          },
+          controls: false,
+        };
+
+        /* FIXME: Safari is somehow broken */
+        if(navigator.userAgent.indexOf('Safari') > -1) {
+          useNativeTextTracks = false;
+        }
+
+        if(isIOS) {
+          self.video = videojs($video.get(0), videoJSOpts, initPlayer);
+        } else {
+          self.video = $video.get(0);
+          self.video.play();
+        }
       }
     });
   },
