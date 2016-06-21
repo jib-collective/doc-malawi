@@ -118,7 +118,7 @@ Step.prototype = {
 
       var videoJSOpts = {
         html5: {
-          nativeTextTracks: false
+          nativeTextTracks: useNativeTextTracks,
         },
         controls: false,
       };
