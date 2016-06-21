@@ -58,6 +58,14 @@ Application.prototype = {
         e.preventDefault();
 
         if (screenfull.enabled) {
+          $(document).on(screenfull.raw.fullscreenchange, function() {
+            if(screenfull.isFullscreen) {
+              $('.header').addClass('header--is-fullscreen');
+            } else {
+              $('.header').removeClass('header--is-fullscreen');
+            }
+          });
+
           screenfull.request();
         }
       });

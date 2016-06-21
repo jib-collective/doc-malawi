@@ -90,4 +90,10 @@
     transition: width .2s ease-in;
     width: 0;
   }
+
+  &--is-fullscreen &__share,
+  &--is-fullscreen &__button {
+    transition: margin .2s ease-in;
+    margin-top: -10rem;
+  }
 }
