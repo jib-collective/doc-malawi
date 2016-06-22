@@ -114,17 +114,18 @@ Step.prototype = {
 
       if($video.hasClass('js-video-play')) {
         var useNativeTextTracks = true;
+
+        /* FIXME: Safari is somehow broken */
+        if(navigator.userAgent.indexOf('Safari') > -1) {
+          useNativeTextTracks = false;
+        }
+
         var videoJSOpts = {
           html5: {
             nativeTextTracks: useNativeTextTracks,
           },
           controls: false,
         };
-
-        /* FIXME: Safari is somehow broken */
-        if(navigator.userAgent.indexOf('Safari') > -1) {
-          useNativeTextTracks = false;
-        }
 
         if(!isIOS) {
           self.video = videojs($video.get(0), videoJSOpts, initPlayer);
