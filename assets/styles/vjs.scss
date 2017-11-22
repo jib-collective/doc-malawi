@@ -39,7 +39,10 @@
   &-current-time,
   &-duration,
   &-time-divider,
-  &-remaining-time-display > &-control-text {
+  &-remaining-time-display > &-control-text,
+  &-volume-panel,
+  &-subs-caps-button,
+  &-progress-control {
     display: none;
   }
 
