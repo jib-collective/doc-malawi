@@ -240,19 +240,17 @@ Step.prototype = {
           return;
         }
 
-        var geojsonOptions = {
+        drawGeoJSONLine('malawi_border', {
+          type: 'geojson',
           data: buildUrl('malawi_border'),
-        };
-        var border = new mapboxgl.GeoJSONSource(geojsonOptions);
-        drawGeoJSONLine('malawi_border', border);
+        });
       };
 
       var drawNAFSNCountries = function() {
-        var geojsonOptions = {
+        drawGeoJSONLine('nafsn_countries', {
+          type: 'geojson',
           data: buildUrl('nafsn_countries'),
-        };
-        var borders = new mapboxgl.GeoJSONSource(geojsonOptions);
-        drawGeoJSONLine('nafsn_countries', borders);
+        });
       };
 
       if($slide.data('drawmalawi')) {
