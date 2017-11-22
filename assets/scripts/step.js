@@ -114,17 +114,18 @@ Step.prototype = {
 
       if($video.hasClass('js-video-play')) {
         var useNativeTextTracks = true;
+
+        /* FIXME: Safari is somehow broken */
+        if(navigator.userAgent.indexOf('Safari') > -1) {
+          useNativeTextTracks = false;
+        }
+
         var videoJSOpts = {
           html5: {
             nativeTextTracks: useNativeTextTracks,
           },
           controls: false,
         };
-
-        /* FIXME: Safari is somehow broken */
-        if(navigator.userAgent.indexOf('Safari') > -1) {
-          useNativeTextTracks = false;
-        }
 
         if(!isIOS) {
           self.video = videojs($video.get(0), videoJSOpts, initPlayer);
@@ -239,19 +240,17 @@ Step.prototype = {
           return;
         }
 
-        var geojsonOptions = {
+        drawGeoJSONLine('malawi_border', {
+          type: 'geojson',
           data: buildUrl('malawi_border'),
-        };
-        var border = new mapboxgl.GeoJSONSource(geojsonOptions);
-        drawGeoJSONLine('malawi_border', border);
+        });
       };
 
       var drawNAFSNCountries = function() {
-        var geojsonOptions = {
+        drawGeoJSONLine('nafsn_countries', {
+          type: 'geojson',
           data: buildUrl('nafsn_countries'),
-        };
-        var borders = new mapboxgl.GeoJSONSource(geojsonOptions);
-        drawGeoJSONLine('nafsn_countries', borders);
+        });
       };
 
       if($slide.data('drawmalawi')) {

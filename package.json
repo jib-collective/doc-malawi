@@ -1,6 +1,6 @@
 {
   "name": "doc-malawi",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A webdoc about tabacco in Malawi.",
   "main": "index.html",
   "repository": {
@@ -16,27 +16,27 @@
   "dependencies": {
     "concurrent-transform": "^1.0.0",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
     "gulp-awspublish": "^3.2.0",
     "gulp-cloudfront-invalidate": "^0.1.2",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
-    "gulp-htmlmin": "^2.0.0",
     "gulp-if": "^2.0.1",
-    "gulp-imagemin": "^3.0.1",
     "gulp-rename": "^1.2.2",
-    "gulp-replace": "^0.5.4",
-    "gulp-sass": "^2.3.1",
     "gulp-svg-sprite": "^1.3.1",
-    "gulp-uglify": "^1.5.3",
     "jquery": "^3.0.0",
-    "mapbox-gl": "^0.20.0",
+    "mapbox-gl": "^0.42.2",
     "merge-stream": "^1.0.0",
     "screenfull": "^3.0.0",
-    "tocca": "^1.0.1",
-    "video.js": "^5.10.4"
+    "tocca": "^2.0.1",
+    "video.js": "^6.4.0"
   },
   "devDependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0"
   }
 }
