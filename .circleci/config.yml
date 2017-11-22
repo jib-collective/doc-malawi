@@ -14,9 +14,10 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
-      - run: |
-        npm install &&
-        npm rebuild node-sass --force
+      - run:
+          command: |
+            npm install &&
+            npm rebuild node-sass --force
       - save_cache:
           paths:
             - node_modules
