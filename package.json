@@ -13,6 +13,11 @@
     "url": "https://github.com/gustavpursche/doc-malawi/issues"
   },
   "homepage": "https://jib-collective.net/stories/malawi/de/",
+  "scripts": {
+    "watch": "npx gulp watch",
+    "build": "npx gulp",
+    "publish": "npx gulp upload"
+  },
   "dependencies": {
     "concurrent-transform": "^1.0.0",
     "gulp": "^3.9.1",
