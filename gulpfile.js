@@ -1,6 +1,16 @@
 'use strict';
 
-const config = require('./config.json');
+let config;
+
+try {
+  config = require('./config.json');
+} catch(err) {
+  config = {
+    facebookAppId: process.env.FB_APP_ID || '',
+    googleAnalyticsId: process.env.GA_ID || '',
+    mapboxAppId: process.env.MAPBOX_APP_ID || '',
+  };
+}
 
 const autoprefixer = require('gulp-autoprefixer');
 const cloudfront = require('gulp-cloudfront-invalidate');
