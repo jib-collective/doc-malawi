@@ -146,7 +146,7 @@ Application.prototype = {
 
         self.prevSlide();
       })
-      .on('swipeleft.main swipeup.main', function() {
+      .on('swipeleft.main swipeup.main', function(e) {
         if(typeof(window.ga) === 'function') {
           ga('send', 'event', 'Navigation', 'Swipe Left');
         }
