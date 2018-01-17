@@ -13,6 +13,7 @@ try {
 }
 
 const autoprefixer = require('gulp-autoprefixer');
+const babel = require('gulp-babel');
 const cloudfront = require('gulp-cloudfront-invalidate');
 const concat = require('gulp-concat');
 const parallelize = require('concurrent-transform');
@@ -94,6 +95,11 @@ gulp.task('scripts', () => {
     './assets/scripts/main.js',
   ])
     .pipe(concat('main.js'))
+    .pipe(babel({
+        plugins: [
+          'transform-runtime',
+        ]
+    }))
     .pipe(gulp.dest('./dist/scripts/'))
 });
 
