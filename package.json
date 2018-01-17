@@ -33,7 +33,7 @@
     "merge-stream": "^1.0.0",
     "screenfull": "^3.0.0",
     "tocca": "^2.0.1",
-    "video.js": "^6.4.0"
+    "video.js": "^6.6.0"
   },
   "devDependencies": {
     "express": "^4.13.4",
