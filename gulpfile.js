@@ -22,6 +22,7 @@ const imagemin = require('gulp-imagemin');
 const replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const svgSprite = require('gulp-svg-sprite');
+const uglify = require('gulp-uglify');
 
 gulp.task('styles', () => {
   return gulp.src([
@@ -53,12 +54,9 @@ gulp.task('scripts', () => {
     './assets/scripts/step.js',
     './assets/scripts/main.js',
   ])
-    .pipe(babel({
-        plugins: [
-          'transform-runtime',
-        ]
-    }))
     .pipe(concat('main.js'))
+    .pipe(babel())
+    .pipe(uglify())
     .pipe(gulp.dest('./dist/scripts/'))
 });
 
@@ -67,7 +65,7 @@ gulp.task('html', () => {
     './de/dev/**/*.html',
   ])
     .pipe(replace('{{url}}', ''))
-    .pipe(replace('{{version}}', ''))
+    .pipe(replace('{{version}}', '?v=' + require('./package.json').version))
     .pipe(replace('{{facebookAppId}}', config.facebookAppId))
     .pipe(replace('{{googleAnalyticsId}}', config.googleAnalyticsId))
     .pipe(replace('{{mapboxAppId}}', config.mapboxAppId))

@@ -70,7 +70,7 @@ Step.prototype = {
           .children('svg')
             .children('use')
               .attr({
-                'xlink:href': '../dist/images/sprite.svg#' + state,
+                'xlink:href': '/images/sprite.svg#' + state,
               });
       };
       var initPlayer = function() {
@@ -85,7 +85,7 @@ Step.prototype = {
                             .addClass('vjs-play-control-icon')
                             .append(
                               $('<use/>')
-                                .attr('xlink:href', '../dist/images/sprite.svg#pause')
+                                .attr('xlink:href', '/images/sprite.svg#pause')
                             )
                           );
 
@@ -200,7 +200,7 @@ Step.prototype = {
 
     var mapCalls = function($slide) {
       var buildUrl = function(filename) {
-        return '../dist/data/' + filename + '.webjson';
+        return '/data/' + filename + '.webjson';
       };
 
       var drawGeoJSONLine = function(index, data) {
