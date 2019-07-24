@@ -13,10 +13,7 @@
           content="width=device-width, initial-scale=1, user-scalable=no">
 
     <link rel="stylesheet"
-          href="{{url}}dist/styles/main.css{{version}}" />
-
-    <link rel="dns-prefetch"
-          href="{{url}}" />
+          href="{{url}}/styles/main.css{{version}}" />
 
     <link rel="dns-prefetch"
           href="https://api.mapbox.com" />
@@ -30,7 +27,7 @@
           crossorigin />
 
     <link rel="prefetch"
-          href="{{url}}dist/scripts/main.js"
+          href="{{url}}/scripts/main.js"
           as="script" />
 
     <!--
@@ -46,7 +43,7 @@
     <meta name="twitter:title"
           content="Voll abhängig" />
     <meta name="twitter:image"
-          content="{{url}}dist/images/malawi_twitter.jpg{{version}}" />
+          content="{{url}}/images/malawi_twitter.jpg{{version}}" />
     <meta name="twitter:image:alt"
           content="Kleinfarmer Erisa Chisenga auf seinem Tabakfeld in
                    Machokero, Malawi." />
@@ -72,7 +69,7 @@
     <meta property="og:locale"
           content="de_DE" />
     <meta property="og:image"
-          content="{{url}}dist/images/malawi_facebook.jpg{{version}}"/>
+          content="{{url}}/images/malawi_facebook.jpg{{version}}"/>
     <meta property="og:description"
           content="Der Tabak beschert Malawi wichtige Einnahmen – und viele
                    Probleme. Die Regierung will davon weg, doch ausgerechnet
@@ -89,7 +86,7 @@
 
         <button class="header__button header__button--is-hidden js-toggle-fullscreen">
           <svg class="header__button-icon">
-            <use xlink:href="../dist/images/sprite.svg{{version}}#arrows-alt"></use>
+            <use xlink:href="{{url}}/images/sprite.svg{{version}}#arrows-alt"></use>
           </svg>
           Vollbild
         </button>
@@ -100,7 +97,7 @@
             class="js-share-button"
             target="_blank">
             <svg class="header__share-icon">
-              <use xlink:href="../dist/images/sprite.svg{{version}}#facebook"></use>
+              <use xlink:href="{{url}}/images/sprite.svg{{version}}#facebook"></use>
             </svg>
             facebook
           </a>
@@ -108,7 +105,7 @@
              class="js-share-button"
              target="_blank">
             <svg class="header__share-icon">
-              <use xlink:href="../dist/images/sprite.svg{{version}}#twitter"></use>
+              <use xlink:href="{{url}}/images/sprite.svg{{version}}#twitter"></use>
             </svg>
             twitter
           </a>
@@ -119,21 +116,21 @@
         <button class="app-navigation__button app-navigation__button--prev js-goto-next">
           <svg class="header__button-icon">
             <title>Vorheriger Slide</title>
-            <use xlink:href="../dist/images/sprite.svg{{version}}#arrow-left"></use>
+            <use xlink:href="{{url}}/images/sprite.svg{{version}}#arrow-left"></use>
           </svg>
         </button>
 
         <button class="app-navigation__button app-navigation__button--next js-goto-next">
           <svg class="header__button-icon">
             <title>Nächster Slide</title>
-            <use xlink:href="../dist/images/sprite.svg{{version}}#arrow-right"></use>
+            <use xlink:href="{{url}}/images/sprite.svg{{version}}#arrow-right"></use>
           </svg>
         </button>
       </nav>
 
       <div>
         <section class="step step--intro step--active"
-                 style="background-image: url({{url}}dist/images/malawi_1.jpg{{version}});"
+                 style="background-image: url({{url}}/images/malawi_1.jpg{{version}});"
                  data-url=""
                  tabindex="-1">
           <article class="step__canvas step__canvas--borderless">
@@ -158,7 +155,7 @@
               </span>
 
               <svg class="button__icon">
-                <use xlink:href="../dist/images/sprite.svg{{version}}#arrow-right"></use>
+                <use xlink:href="{{url}}/images/sprite.svg{{version}}#arrow-right"></use>
               </svg>
             </a>
           </article>
@@ -168,18 +165,18 @@
                  data-url="chisenga">
           <video class="js-video js-video-play video video--fullscreen"
                  preload="none"
-                 data-poster="{{url}}dist/images/malawi_poster_chisenga_1.jpg{{version}}"
+                 data-poster="{{url}}/images/malawi_poster_chisenga_1.jpg{{version}}"
                  data-title="Erisa Chisenga Jere"
                  data-subtitle="Tabakbauer">
 
-            <source src="{{url}}dist/videos/malawi_chisenga_1.webm{{version}}"
+            <source src="{{url}}/videos/malawi_chisenga_1.webm{{version}}"
                     type="video/webm">
 
-            <source src="{{url}}dist/videos/malawi_chisenga_1.mp4{{version}}"
+            <source src="{{url}}/videos/malawi_chisenga_1.mp4{{version}}"
                     type="video/mp4">
 
             <track kind="captions"
-                   src="../dist/data/sub_malawi_1_chisenga_de.vtt{{version}}"
+                   src="{{url}}/data/sub_malawi_1_chisenga_de.vtt{{version}}"
                    srclang="nya"
                    label="deutsch"
                    default>
@@ -209,58 +206,58 @@
                   data-drawmalawi="true">
                 <div class="map-slide__graphic">
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                 </div>
 
@@ -282,58 +279,58 @@
                   data-zoomintomalawi="true">
                 <div class="map-slide__graphic">
                   <svg class="map-slide__icon map-slide__icon--colorize">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon map-slide__icon--colorize">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon map-slide__icon--colorize">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon map-slide__icon--colorize">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon map-slide__icon--colorize">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon map-slide__icon--colorize">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon map-slide__icon--colorize">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon map-slide__icon--colorize">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon map-slide__icon--colorize">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                   <svg class="map-slide__icon">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#person-male"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#person-male"></use>
                   </svg>
                 </div>
 
@@ -349,7 +346,7 @@
               <li class="map-slide__fact">
                 <div class="map-slide__graphic map-slide__graphic--inline">
                   <svg class="map-slide__icon map-slide__icon--huge">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#globe"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#globe"></use>
                   </svg>
                 </div>
 
@@ -373,7 +370,7 @@
               <li class="map-slide__fact">
                 <div class="map-slide__graphic map-slide__graphic--inline">
                   <svg class="map-slide__icon map-slide__icon--huge">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#leaf"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#leaf"></use>
                   </svg>
                 </div>
 
@@ -392,7 +389,7 @@
               <li class="map-slide__fact">
                 <div class="map-slide__graphic map-slide__graphic--inline">
                   <svg class="map-slide__icon map-slide__icon--huge">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#leaf"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#leaf"></use>
                   </svg>
                 </div>
 
@@ -440,18 +437,18 @@
                  data-url="gondwe">
           <video class="js-video js-video-play video video--fullscreen"
                  preload="none"
-                 data-poster="{{url}}dist/images/malawi_poster_gondwe_2.jpg{{version}}"
+                 data-poster="{{url}}/images/malawi_poster_gondwe_2.jpg{{version}}"
                  data-title="Goodall Gondwe"
                  data-subtitle="Finanzminister">
 
-           <source src="{{url}}dist/videos/malawi_gondwe_2.webm{{version}}"
+           <source src="{{url}}/videos/malawi_gondwe_2.webm{{version}}"
                    type="video/webm">
 
-           <source src="{{url}}dist/videos/malawi_gondwe_2.mp4{{version}}"
+           <source src="{{url}}/videos/malawi_gondwe_2.mp4{{version}}"
                    type="video/mp4">
 
            <track kind="captions"
-                  src="../dist/data/sub_malawi_2_gondwe_de.vtt{{version}}"
+                  src="{{url}}/data/sub_malawi_2_gondwe_de.vtt{{version}}"
                   srclang="de"
                   label="deutsch"
                   default>
@@ -482,7 +479,7 @@
                   data-zoomintomalawi="true">
                 <div class="map-slide__graphic map-slide__graphic--inline">
                   <svg class="map-slide__icon map-slide__icon--colorize map-slide__icon--huge">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#heartbeat"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#heartbeat"></use>
                   </svg>
                 </div>
 
@@ -506,7 +503,7 @@
               <li class="map-slide__fact map-slide__fact--is-active">
                 <div class="map-slide__graphic map-slide__graphic--inline">
                   <svg class="map-slide__icon map-slide__icon--colorize map-slide__icon--huge">
-                    <use xlink:href="../dist/images/sprite.svg{{version}}#child"></use>
+                    <use xlink:href="{{url}}/images/sprite.svg{{version}}#child"></use>
                   </svg>
                 </div>
 
@@ -547,18 +544,18 @@
                  data-url="banda">
           <video class="js-video js-video-play video video--fullscreen"
                 preload="none"
-                data-poster="{{url}}dist/images/malawi_poster_banda_3.jpg{{version}}"
+                data-poster="{{url}}/images/malawi_poster_banda_3.jpg{{version}}"
                 data-title="Alfred Kapichira Banda"
                 data-subtitle="Großfarmer">
 
-            <source src="{{url}}dist/videos/malawi_banda_3.webm{{version}}"
+            <source src="{{url}}/videos/malawi_banda_3.webm{{version}}"
                     type="video/webm">
 
-            <source src="{{url}}dist/videos/malawi_banda_3.mp4{{version}}"
+            <source src="{{url}}/videos/malawi_banda_3.mp4{{version}}"
                     type="video/mp4">
 
             <track kind="captions"
-                   src="../dist/data/sub_malawi_3_banda_de.vtt{{version}}"
+                   src="{{url}}/data/sub_malawi_3_banda_de.vtt{{version}}"
                    srclang="de"
                    label="deutsch"
                    default>
@@ -647,18 +644,18 @@
                  data-url="ngwira">
           <video class="js-video js-video-play video video--fullscreen"
                 preload="none"
-                data-poster="{{url}}dist/images/malawi_poster_ngwira_4.jpg{{version}}"
+                data-poster="{{url}}/images/malawi_poster_ngwira_4.jpg{{version}}"
                 data-title="Ronald Ngwira"
                 data-subtitle="Alliance One">
 
-           <source src="{{url}}dist/videos/malawi_ngwira_4.webm{{version}}"
+           <source src="{{url}}/videos/malawi_ngwira_4.webm{{version}}"
                    type="video/webm">
 
-           <source src="{{url}}dist/videos/malawi_ngwira_4.mp4{{version}}"
+           <source src="{{url}}/videos/malawi_ngwira_4.mp4{{version}}"
                    type="video/mp4">
 
            <track kind="captions"
-                  src="../dist/data/sub_malawi_4_ngwira_de.vtt{{version}}"
+                  src="{{url}}/data/sub_malawi_4_ngwira_de.vtt{{version}}"
                   srclang="de"
                   label="deutsch"
                   default>
@@ -691,18 +688,18 @@
                  data-url="makoka-heubuch">
           <video class="js-video js-video-play video video--fullscreen"
                  preload="none"
-                 data-poster="{{url}}dist/images/malawi_poster_makoka-heubuch_5.jpg{{version}}"
+                 data-poster="{{url}}/images/malawi_poster_makoka-heubuch_5.jpg{{version}}"
                  data-title="Donald Makoka / Maria Heubuch"
                  data-subtitle="Entwicklungsökonom / EU-Abgeordnete">
 
-           <source src="{{url}}dist/videos/malawi_makoka-heubuch_5.webm{{version}}"
+           <source src="{{url}}/videos/malawi_makoka-heubuch_5.webm{{version}}"
                    type="video/webm">
 
-           <source src="{{url}}dist/videos/malawi_makoka-heubuch_5.mp4{{version}}"
+           <source src="{{url}}/videos/malawi_makoka-heubuch_5.mp4{{version}}"
                    type="video/mp4">
 
            <track kind="captions"
-                  src="../dist/data/sub_malawi_5_makoka_heubuch_de.vtt{{version}}"
+                  src="{{url}}/data/sub_malawi_5_makoka_heubuch_de.vtt{{version}}"
                   srclang="de"
                   label="deutsch"
                   default>
@@ -734,18 +731,18 @@
                  data-url="chisenga-2">
           <video class="js-video js-video-play video video--fullscreen"
                  preload="none"
-                 data-poster="{{url}}dist/images/malawi_poster_chisenga_6.jpg{{version}}"
+                 data-poster="{{url}}/images/malawi_poster_chisenga_6.jpg{{version}}"
                  data-title="Erisa Chisenga Jere"
                  data-subtitle="Tabakbauer">
 
-           <source src="{{url}}dist/videos/malawi_chisenga_6.webm{{version}}"
+           <source src="{{url}}/videos/malawi_chisenga_6.webm{{version}}"
                    type="video/webm">
 
-           <source src="{{url}}dist/videos/malawi_chisenga_6.mp4{{version}}"
+           <source src="{{url}}/videos/malawi_chisenga_6.mp4{{version}}"
                    type="video/mp4">
 
            <track kind="captions"
-                  src="../dist/data/sub_malawi_6_chisenga_de.vtt{{version}}"
+                  src="{{url}}/data/sub_malawi_6_chisenga_de.vtt{{version}}"
                   srclang="nya"
                   label="deutsch"
                   default>
@@ -775,7 +772,7 @@
                      class="outro__logo outro__logo--jib">
                     <svg>
                       <title>Logo jib</title>
-                      <use xlink:href="../dist/images/sprite.svg{{version}}#jib-logo"></use>
+                      <use xlink:href="{{url}}/images/sprite.svg{{version}}#jib-logo"></use>
                     </svg>
                   </a>
                 </li>
@@ -785,7 +782,7 @@
                      class="outro__logo outro__logo--fluter">
                     <svg>
                      <title>Logo Fluter</title>
-                     <use xlink:href="../dist/images/sprite.svg{{version}}#fluter-logo"></use>
+                     <use xlink:href="{{url}}/images/sprite.svg{{version}}#fluter-logo"></use>
                     </svg>
                   </a>
                 </li>
@@ -795,7 +792,7 @@
                      class="outro__logo outro__logo--correctiv">
                      <svg>
                        <title>Logo Correctiv</title>
-                       <use xlink:href="../dist/images/sprite.svg{{version}}#correctiv-logo"></use>
+                       <use xlink:href="{{url}}/images/sprite.svg{{version}}#correctiv-logo"></use>
                      </svg>
                   </a>
                 </li>
@@ -810,7 +807,7 @@
       window.mapboxAppId = '{{mapboxAppId}}';
     </script>
 
-    <script src="{{url}}dist/scripts/main.js{{version}}"
+    <script src="{{url}}/scripts/main.js{{version}}"
             async></script>
 
     <script>
